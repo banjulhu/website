@@ -15,7 +15,7 @@ export default {
                     "primary": "#F57D20"
                 },
                 basic: {
-                    "black": "#1b2021"
+                    "black": "#1b2021",
                 }
             }
         },

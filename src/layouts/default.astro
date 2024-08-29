@@ -4,17 +4,26 @@ import Footer from "../components/footer";
 import "../styles/global.scss";
 ---
 
-<html lang="en">
+<html lang="en" class="bg-white dark:bg-basic-black">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content={Astro.generator}/>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
     <title>ELIXIR Norway</title>
+    <script is:inline>
+        const theme = localStorage.getItem("theme") || "light";
+        if (theme === 'light' ||
+            !window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 </head>
-<body class="relative min-h-full bg-white dark:bg-basic-black">
+<body class="relative min-h-full">
     <Navigation client:load pathname={Astro.url.pathname}/>
-    <div class="isolate px-6 sm:px-8 pb-12 pt-16">
+    <div class="isolate px-6 sm:px-8 pb-12 pt-16 bg-white dark:bg-basic-black">
         <slot/>
     </div>
     <Footer/>

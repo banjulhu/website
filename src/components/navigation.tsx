@@ -1,5 +1,5 @@
 import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 import React, { Fragment, useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import CommandPalette from "./command-palette.tsx";
@@ -81,10 +81,12 @@ export const Navigation = ({ pathname }) => {
                         ))}
                     </div>
                     <div className="hidden lg:flex gap-x-2 lg:flex-1 lg:justify-end">
-                        <ThemeToggle />
+                        <ThemeToggle/>
                         <button onClick={onSearchClick}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                                 stroke="currentColor" className="size-6">
+                                <path strokeLinecap="round" strokeLinejoin="round"
+                                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
                             </svg>
                         </button>
                     </div>
@@ -108,8 +110,10 @@ export const Navigation = ({ pathname }) => {
                                 className="flex items-center justify-center"
                             >
                                 <span className="sr-only">Close menu</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
                                 </svg>
                             </button>
                         </div>
@@ -136,9 +140,10 @@ export const Navigation = ({ pathname }) => {
                     </DialogPanel>
                 </Dialog>
             </header>
-            <ContextualHeader sections={sections}/>
+            {/*<ContextualHeader sections={sections}/>*/}
         </Fragment>
     );
+
 };
 
 const ContextualHeader = ({ sections }) => {
