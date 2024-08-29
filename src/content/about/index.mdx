@@ -1,0 +1,103 @@
+---
+layout: "../../layouts/full-width.astro"
+---
+
+import TwoColHero from "../../components/two-col-hero.tsx";
+import BaseContentSection from "../../components/sections/base-section.astro";
+import {Fragment} from "react";
+import Universities from "../../components/universities.tsx";
+import People from "../../components/people.astro";
+import SimpleIconCards from "../../components/simple-icon-cards.astro";
+import DetailedFeature from "../../components/sections/detailed-feature.astro";
+
+<TwoColHero>
+    <TwoColHero.Header>Collaborative Life Science Hub Linking Five Organizations to [Elixir
+        Europe](https://www.elixir-europe.org)</TwoColHero.Header>
+    <TwoColHero.Description>Coordinated from the [University of Bergen](https://www.uib.no/), ELIXIR Norway includes
+        subnodes at the [University of Oslo](https://www.uio.no/), the [Arctic University of Norway in
+        Tromsø](https://uit.no/), [NTNU Trondheim](https://www.ntnu.no/), and [NMBU Ås](https://www.nmbu.no/). This
+        intergovernmental network supports and advances life science research by integrating resources and expertise
+        across the country.</TwoColHero.Description>
+    <TwoColHero.Figure alt="ELIXIR Norway in a nutshell" src="/images/figures/elixir-no-in-a-nutshell.png"/>
+</TwoColHero>
+
+<BaseContentSection title="Organization" marginTop>
+    <Fragment slot="description">
+        The ELIXIR Norway organization is structured into several roles and committees. It includes node leaders from
+        different universities in Norway, coordinators for technical, training, data management, and service aspects, a
+        steering board with representatives from various universities, a scientific advisory committee with
+        international members, and a stakeholder panel featuring experts from academia and industry.
+    </Fragment>
+    <div className="mt-12">
+        <Universities/>
+        <div className="mt-24 flex flex-col gap-y-14">
+            <div>
+                <h2 className="text-3xl font-bold mb-8">Node Leaders</h2>
+                <People elixirGroup="node-leaders"/>
+            </div>
+            <div>
+                <h2 className="text-3xl font-bold mb-8">Coordinators</h2>
+                <People elixirGroup="coordinators"/>
+            </div>
+            <div>
+                <h2 className="text-3xl font-bold mb-8">Steering Board</h2>
+                <People elixirGroup="steering-board"/>
+            </div>
+            <div>
+                <h2 className="text-3xl font-bold mb-8">Scientific Advisory Committee</h2>
+                <People elixirGroup="scientific-advisory-committee" hidePicture/>
+            </div>
+            <div>
+                <h2 className="text-3xl font-bold mb-8">Stakeholder Panel</h2>
+                <People elixirGroup="stakeholder-panel" hidePicture/>
+            </div>
+        </div>
+    </div>
+</BaseContentSection>
+
+<BaseContentSection title="Funding and Projects" marginTop>
+
+</BaseContentSection>
+
+<BaseContentSection title="Impact" marginTop>
+    <Fragment slot="description">
+        We often explain and communicate the impact of work funded by, and through, ELIXIR using impact areas i.e.
+        impact categories. All activities carried out under the umbrella of ELIXIR, i.e. ELIXIR related activities,
+        can be attached to one or more of the impact categories (or areas) shown in illustration. These categories are a
+        useful way to describe what ELIXIR related activities are meant to achieve in terms of impact.s
+    </Fragment>
+    <div className="mt-20 flex flex-col gap-y-12">
+        <figure className="text-center">
+            <img src="/images/figures/impact.svg"
+                 alt="Product screenshot"
+                 className="lg:mt-6 lg:scale-125 max-h-[500px] mx-auto"
+                 width="auto"/>
+            <figcaption className="mt-20 text-sm">Adapted from Martin et al. (2021) [DOI: 10.1111/apce.12328]
+                (https://doi.org/10.1111/apce.12328)</figcaption>
+        </figure>
+        <SimpleIconCards/>
+    </div>
+</BaseContentSection>
+
+<BaseContentSection title="International Collaboration" marginTop>
+
+    <DetailedFeature figSrc="/images/figures/nodes-map.svg"
+                     figCaption="Map of member states within ELIXIR. Each member state establishes a 'Node' in its country, which is a network of institutes that carry out the scientific and technical work of ELIXIR within that country. Orange = member states; pale orange = observers. Observers are countries working towards full membership.">
+
+        We are a European intergovernmental organisation composed of life scientists, computer scientists, and support
+        staff. Our mission is to enable researchers to harness the vast amounts of data produced in life sciences,
+        providing new insights into how living organisms function in health and disease.
+
+        ELIXIR Norway is part of the broader ELIXIR network, which includes 23 member countries working
+        together through a "Hub and Nodes" model:
+
+        - **ELIXIR Hub:** The ELIXIR Hub acts as the central headquarters, coordinating activities across the
+        entire network. It is based at the Wellcome Genome Campus, near Cambridge, UK.
+        - **ELIXIR Nodes:** Each ELIXIR member country establishes a ‘Node’—a network of organisations within
+        that country. In Norway, ELIXIR Norway serves as the Node, coordinating local activities and
+        collaborating with national and international partners to advance life science research.
+
+    </DetailedFeature>
+
+</BaseContentSection>
+

@@ -1,0 +1,89 @@
+---
+layout: "../../layouts/full-width.astro"
+---
+
+
+import ThreeColumnHero from "../../components/three-column-hero.astro";
+import Carousel from "../../components/carousel.tsx";
+import TinyCardWithIconLeft from "../../components/tiny-card-with-icon-left.tsx";
+import {IoMdHelpCircle} from "react-icons/io";
+import {FaFingerprint, FaServer, FaTools} from "react-icons/fa";
+import Universities from "../../components/universities.tsx";
+import FeaturedNews from "../../components/featured-news.astro";
+import GridFeature from "../../components/sections/grid-feature.astro";
+import BasicFeature from "../../components/sections/basic-feature.astro";
+
+<ThreeColumnHero>
+    <div slot="left">
+        # Elixir Norway
+
+        ELIXIR Norway is a national node of [ELIXIR](https://elixir-europe.org/), the pan-European
+        infrastructure for _biological information_, supporting life science research
+        and its translation to medicine, environment, the bioindustries and society.
+
+        ELIXIR Norway is funded by the [Research Council of Norway](https://www.forskningsradet.no/en/)
+        and its partners, and builds upon the Norwegian Bioinformatics Platform, which has
+        provided support and tools for Norwegian life science research for nearly two decades.
+    </div>
+    <Carousel client:visible images={[
+        {
+            src: 'https://via.placeholder.com/800x400/3498db/ffffff?text=Slide+1',
+            alt: 'Placeholder for slide 1',
+            caption: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda atque delectus dignissimos dolorum eaque est, expedita impedit labore magnam maxime neque nisi quae quia quo sapiente sequi voluptas voluptatem!"
+        },
+        {
+            src: 'https://via.placeholder.com/800x400/e74c3c/ffffff?text=Slide+2',
+            alt: 'Placeholder for slide 2'
+        },
+        {
+            src: 'https://via.placeholder.com/800x400/2ecc71/ffffff?text=Slide+3',
+            alt: 'Placeholder for slide 3'
+        },
+        {
+            src: 'https://via.placeholder.com/800x400/f39c12/ffffff?text=Slide+4',
+            alt: 'Placeholder for slide 4'
+        },
+        {
+            src: 'https://via.placeholder.com/800x400/9b59b6/ffffff?text=Slide+5',
+            alt: 'Placeholder for slide 5'
+        }
+    ]}/>
+    <div slot="right">
+        # News
+        <FeaturedNews/>
+    </div>
+</ThreeColumnHero>
+
+<GridFeature>
+    <div slot="intro">
+        # Unlock the Power of Your Data with ELIXIR Norway
+        At ELIXIR Norway, we empower your research with cutting-edge solutions tailored for _life sciences_. From
+        comprehensive **data management and analysis** to **secure storage and specialized support**, we offer
+        everything you need to propel your projects forward. Whether handling sensitive human data or managing
+        large-scale genomics datasets, our services are designed to meet the unique demands of life science research in
+        Norway and beyond.
+    </div>
+    <TinyCardWithIconLeft title="Research Support" icon={IoMdHelpCircle}>Short and long-term support with bioinformatics
+        analyses, programming and data management tasks. [Contact the
+        helpdesk](mailto:support@elixir.no).</TinyCardWithIconLeft>
+    <TinyCardWithIconLeft title="Services" icon={FaTools}>Analysis and management of life science data within marine,
+        health, genomics, proteomics, structural analysis and more.</TinyCardWithIconLeft>
+    <TinyCardWithIconLeft title="e-infrastructure" icon={FaServer}>NeLS, the Norwegian e-Infrastructure for Life
+        Sciences, for analysis, sharing, managment and storage of life science data.</TinyCardWithIconLeft>
+    <TinyCardWithIconLeft title="Sensitive Data" icon={FaFingerprint}>ELIXIR Norway provides archiving solutions for
+        potentially identifiable human data and provides support for data analysis and management on national secure
+        infrastructures, including [TSD](https://www.uio.no/english/services/it/research/sensitive-data/index.html),
+        [HUNT Cloud](https://www.ntnu.edu/mh/huntcloud) and
+        [SAFE](https://www.uib.no/en/it/131011/safe-secure-access-research-data-and-e-infrastructure).</TinyCardWithIconLeft>
+</GridFeature>
+
+<BasicFeature>
+    <div slot="intro">
+        # Collaboration Between Five Organizations Across Norway
+
+        ELIXIR Norway is built on a robust collaboration between five leading organizations across Norway. By combining
+        their expertise and resources, these institutions work together to advance research and innovation, driving
+        progress in life sciences and data science throughout the region.
+    </div>
+    <Universities/>
+</BasicFeature>

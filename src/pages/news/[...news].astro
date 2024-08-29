@@ -1,0 +1,28 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import { components } from "../../components/elements";
+import SidebarMenu from "../../components/sidebar-menu";
+import ComplexLayout from "../../layouts/complex.astro";
+import LeftSidebar from "../../content/training/_left.mdx";
+import RightSidebar from "../../content/training/_right.mdx";
+import { Debug } from "astro/components";
+
+export async function getStaticPaths() {
+    const news = await getCollection('news');
+    return news.map(entry => ({
+        params: {
+            news: entry.slug
+        },
+        props: {
+            entry
+        },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content: MarkdownContent } = await entry.render();
+---
+<ComplexLayout {...entry.data} sidebar="equal">
+    <MarkdownContent components={components} />
+</ComplexLayout>
+

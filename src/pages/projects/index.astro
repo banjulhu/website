@@ -1,0 +1,58 @@
+---
+import Content from "../../content/projects/index.mdx";
+import { components } from "../../components/elements";
+import Layout from "../../layouts/complex.astro";
+import ProjectCard from "../../components/project-card";
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+function groupByProjectType(objects) {
+
+    const result = {
+        Global: [],
+        National: [],
+        European: []
+    };
+
+    objects.forEach(obj => {
+        switch (obj.data.type) {
+            case 'global-project':
+                result.Global.push(obj);
+                break;
+            case 'national-project':
+                result.National.push(obj);
+                break;
+            case 'european-project':
+                result.European.push(obj);
+                break;
+            default:
+                console.warn(`Unknown type: ${obj.data.type}`);
+        }
+    });
+
+    return result;
+
+}
+
+const projects = await getCollection('projects');
+const groupedProjects = groupByProjectType(projects);
+---
+
+<Layout title="Projects">
+    {[...Object.entries(groupedProjects)].map(([title, value]) => {
+        return (
+            <section class="flex flex-col gap-y-8 mt-12">
+                <h1 class="text-3xl font-bold underline">{title}</h1>
+                <div class="flex flex-col gap-y-6">
+                    {value.map((project) => {
+                        return (
+                                <ProjectCard title={project.data.title} href={`/projects/${project.slug}`}>
+                                    {project.data.summary}
+                                </ProjectCard>
+                        );
+                    })}
+                </div>
+            </section>
+        )
+    })}
+</Layout>
+

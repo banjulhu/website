@@ -1,0 +1,22 @@
+---
+import Navigation from "../components/navigation";
+import Footer from "../components/footer";
+import "../styles/global.scss";
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <title>ELIXIR Norway</title>
+</head>
+<body class="relative min-h-full bg-white dark:bg-basic-black">
+    <Navigation client:load pathname={Astro.url.pathname}/>
+    <div class="isolate px-6 sm:px-8 pb-12 pt-16">
+        <slot/>
+    </div>
+    <Footer/>
+</body>
+</html>

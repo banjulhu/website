@@ -1,0 +1,37 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import { components } from "../../components/elements";
+import SidebarMenu from "../../components/sidebar-menu";
+import Projects from "../../layouts/complex.astro";
+import LeftSidebar from "../../content/training/_left.mdx";
+import RightSidebar from "../../content/training/_right.mdx";
+import { Debug } from "astro/components";
+
+export async function getStaticPaths() {
+    const pages = await getCollection('training');
+    return pages.map(entry => ({
+        params: {
+            page: entry.slug
+        },
+        props: {
+            entry
+        },
+    }));
+}
+const { entry } = Astro.props;
+const { Content: MarkdownContent } = await entry.render();
+---
+<Projects title={ entry.data.title } sidebar="equal">
+
+    <div slot="left">
+        <LeftSidebar/>
+    </div>
+
+    <MarkdownContent components={components} />
+
+    <div slot="right">
+        <RightSidebar/>
+    </div>
+
+</Projects>
+

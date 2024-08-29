@@ -1,0 +1,23 @@
+---
+import MainContent from "../../content/training/index.mdx";
+import LeftSidebar from "../../content/training/_left.mdx";
+import { components } from "../../components/elements";
+import Projects from "../../layouts/complex.astro";
+import SidebarMenu from "../../components/sidebar-menu";
+import NavigationList from "../../components/navigation-list.astro";
+import RightSidebar from "../../content/training/_right.mdx";
+---
+
+<Projects title="Training" sidebar="equal">
+
+    <div slot="left">
+        <LeftSidebar/>
+    </div>
+
+    <MainContent components={components} class="content"/>
+
+    <div slot="right">
+        <RightSidebar/>
+    </div>
+
+</Projects>

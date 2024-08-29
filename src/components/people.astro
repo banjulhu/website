@@ -1,0 +1,91 @@
+---
+import people from "../data/people.json";
+
+type Org = {
+    name: string;
+    people: Person[];
+}
+
+type Person = {
+    "name": string;
+    "title": string;
+    "photo": string;
+    "profile-url": string;
+    "affiliations": Array<{ name: string; role: string }>
+    "elixir-groups": Array<{ name: string; role: string }>
+}
+
+const { elixirGroup, org, hidePicture, layout = "default", hideOrg } = Astro.props;
+
+function composeTitle(person: Person) {
+    return [
+        person.title,
+        ...person["elixir-groups"].map(g => g.role).filter(Boolean),
+        ...person["affiliations"].map(a => {
+            if (a) return `${a?.role ? a.role + "—" : ''}${a.name}`;
+        }),
+    ]
+        .filter(Boolean)
+        .join(", ")
+}
+
+function getAllPeopleWithMetadata(data: { groups: any, orgs: { [key: string]: Org } }) {
+    let allPeople = [];
+    for (const [orgKey, org] of Object.entries(data.orgs)) {
+        org.people.forEach(person => {
+            const personWithMetadata = {
+                ...person,
+                "org-key": orgKey,
+                "org-name": (org as Org).name,
+                "full-title": composeTitle(person)
+            };
+            allPeople.push(personWithMetadata);
+        });
+    }
+    return allPeople;
+}
+
+const sub = x => x?.name === elixirGroup;
+
+let filteredPeople = getAllPeopleWithMetadata(people)
+    .filter(o => !org ? true : o["org-key"] === org)
+    .filter(o => !elixirGroup ? true : o["elixir-groups"]?.find(sub));
+---
+
+<ul class={`grid ${filteredPeople.length > 4 ? (layout === "two-col" ? "md:grid-cols-2 lg:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-5") : "md:grid-cols-2 lg:grid-cols-4"} gap-y-4 gap-x-4 w-full`}>
+    {filteredPeople.map((person) => {
+        return (
+                <li class="col-span-full md:col-span-1 overflow-hidden rounded-xl bg-white w-full">
+                    <a href={person["profile-url"]}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class={`w-full h-full flex ${layout === "two-col" ? "flex-row items-center justify-center" : "flex-row lg:flex-col"} gap-x-2 hover:bg-slate-50 transition-all ease-in-out delay-75`}
+                    >
+                        {!hidePicture && (
+                                <div class="ml-4 flex-shrink-0 w-14 h-14 rounded-full overflow-hidden">
+                                    <img alt={person.name}
+                                         src={person.photo}
+                                         class="object-cover aspect-square"/>
+                                </div>
+                        )}
+                        <div class="py-4 px-4 flex-1">
+                            <div class="text-base font-semibold text-gray-900">
+                                {person.name}
+                            </div>
+                            <div class="flex flex-col gap-y-1">
+                                <div class="text-sm text-gray-600">{person["full-title"]}</div>
+                                {
+                                    !hideOrg && (
+                                                <div class="text-xs text-gray-500">
+                                                    {person["org-name"]}
+                                                </div>
+                                    )
+                                }
+                            </div>
+                        </div>
+                    </a>
+
+                </li>
+        )
+    })}
+</ul>
