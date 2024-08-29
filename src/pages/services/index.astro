@@ -13,7 +13,7 @@ const tags = sortStringsByLength([
     ...new Set(
         services
             .map((s) => (s.data?.tags ?? []))
-            .reduce((pv, cv) => pv.concat(cv), [])
+            .reduce((pv, cv) => pv.concat(cv), []) as string[]
     )
 ]).map((tag) => {
     return ({
