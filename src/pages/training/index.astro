@@ -1,23 +1,44 @@
 ---
 import MainContent from "../../content/training/index.mdx";
-import LeftSidebar from "../../content/training/_left.mdx";
 import { components } from "../../components/elements";
 import Projects from "../../layouts/complex.astro";
 import SidebarMenu from "../../components/sidebar-menu";
+import LinkWithFigure from "../../components/link-with-figure";
+import Card from "../../components/card";
 import NavigationList from "../../components/navigation-list.astro";
-import RightSidebar from "../../content/training/_right.mdx";
 ---
 
 <Projects title="Training" sidebar="equal">
 
     <div slot="left">
-        <LeftSidebar/>
+        <NavigationList
+                links={[
+                    { href: "#upcoming-events", text: "Upcoming training" },
+                    { href: "#training-material", text: "Training material" },
+                    { href: "#past-events", text: "Past Events" },
+                ]}
+        />
     </div>
 
     <MainContent components={components} class="content"/>
 
     <div slot="right">
-        <RightSidebar/>
+        <Card title="Useful links" margin={false}>
+            <div class="flex flex-col gap-2">
+                <LinkWithFigure
+                        href="https://tess.elixir-europe.org/"
+                        logoSrc="/images/logos/elixir-tess.png"
+                        linkText="ELIXIR TeSS"
+                        altText="ELIXIR TeSS"
+                />
+                <LinkWithFigure
+                        href="https://elixir.mf.uni-lj.si/"
+                        logoSrc="/images/logos/elixir-training-platform.png"
+                        linkText="ELIXIR EeLP"
+                        altText="ELIXIR TeSS"
+                />
+            </div>
+        </Card>
     </div>
 
 </Projects>

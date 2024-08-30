@@ -24,7 +24,7 @@ export const LI: React.FC<React.LiHTMLAttributes<HTMLLIElement>> = (props) => (
 );
 
 export const H1: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = (props) => (
-    <h1 {...props} className="text-4xl font-bold mb-4 scroll-mt-12"/>
+    <h1 {...props} className="text-4xl font-bold mt-8 mb-4 scroll-mt-12"/>
 );
 
 export const H2: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = (props) => (
@@ -95,7 +95,7 @@ export const Table: React.FC<React.TableHTMLAttributes<HTMLTableElement>> = ({ c
 );
 
 export const Th: React.FC<React.ThHTMLAttributes<HTMLTableHeaderCellElement>> = (props) => (
-    <th {...props} className="bg-gray-100 border border-gray-300 px-4 py-2 text-left font-semibold"/>
+    <th {...props} className="bg-slate-50 dark:bg-dark-surface border border-gray-300 px-4 py-2 text-left font-semibold"/>
 );
 
 export const Td: React.FC<React.TdHTMLAttributes<HTMLTableDataCellElement>> = (props) => (

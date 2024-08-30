@@ -1,11 +1,11 @@
 ---
 import people from "../data/people.json";
+import {A} from "./elements";
 
 type Org = {
     name: string;
     people: Person[];
 }
-
 type Person = {
     "name": string;
     "title": string;
@@ -15,7 +15,14 @@ type Person = {
     "elixir-groups": Array<{ name: string; role: string }>
 }
 
-const { elixirGroup, org, hidePicture, layout = "default", hideOrg } = Astro.props;
+const {
+    elixirGroup,
+    org,
+    hidePicture,
+    layout = "default",
+    hideOrg,
+    isSummary = false
+} = Astro.props;
 
 function composeTitle(person: Person) {
     return [
@@ -46,46 +53,55 @@ function getAllPeopleWithMetadata(data: { groups: any, orgs: { [key: string]: Or
 }
 
 const sub = x => x?.name === elixirGroup;
-
-let filteredPeople = getAllPeopleWithMetadata(people)
+const peopleWithMeta = getAllPeopleWithMetadata(people);
+const filteredPeople = peopleWithMeta
     .filter(o => !org ? true : o["org-key"] === org)
     .filter(o => !elixirGroup ? true : o["elixir-groups"]?.find(sub));
 ---
 
-<ul class={`grid ${filteredPeople.length > 4 ? (layout === "two-col" ? "md:grid-cols-2 lg:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-5") : "md:grid-cols-2 lg:grid-cols-4"} gap-y-4 gap-x-4 w-full`}>
-    {filteredPeople.map((person) => {
-        return (
-                <li class="col-span-full md:col-span-1 overflow-hidden rounded-xl bg-white w-full">
-                    <a href={person["profile-url"]}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class={`w-full h-full flex ${layout === "two-col" ? "flex-row items-center justify-center" : "flex-row lg:flex-col"} gap-x-2 hover:bg-slate-50 transition-all ease-in-out delay-75`}
-                    >
-                        {!hidePicture && (
-                                <div class="ml-4 flex-shrink-0 w-14 h-14 rounded-full overflow-hidden">
-                                    <img alt={person.name}
-                                         src={person.photo}
-                                         class="object-cover aspect-square"/>
+<Fragment>
+    {isSummary ? (
+            <div class="text-center">
+                <A href="#">70 amazing souls collaborate at Elixir Norway. See them all here.</A>.
+            </div>
+        ) : (
+        <ul class={`grid gap-y-4 gap-x-4 place-content-center ${layout === "two-col" ? "grid-cols-2" : "grid-cols-1"}`}>
+            {filteredPeople.map((person) => {
+                return (
+                        <li class="col-span-full md:col-span-1 w-full">
+                            <a href={person["profile-url"]}
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class={`w-full h-full flex items-start justify-start gap-x-2`}
+                            >
+                                {!hidePicture && (
+                                        <div class="mt-1 mr-2 flex-shrink-0 w-14 h-14 rounded-full overflow-hidden">
+                                            <img alt={person.name}
+                                                 src={person.photo}
+                                                 class="object-cover aspect-square"/>
+                                        </div>
+                                )}
+                                <div class="flex-1">
+                                    <div class="text-base font-semibold">
+                                        {person.name}
+                                    </div>
+                                    <div class="flex flex-col gap-y-1 text-slate-700 dark:text-slate-200">
+                                        <div class="text-xs flex-1">{person["full-title"]}</div>
+                                        {
+                                            !hideOrg && (
+                                                        <div class="text-xs text-slate-600 dark:text-slate-300">
+                                                            {person["org-name"]}
+                                                        </div>
+                                            )
+                                        }
+                                    </div>
                                 </div>
-                        )}
-                        <div class="py-4 px-4 flex-1">
-                            <div class="text-base font-semibold text-gray-900">
-                                {person.name}
-                            </div>
-                            <div class="flex flex-col gap-y-1">
-                                <div class="text-sm text-gray-600">{person["full-title"]}</div>
-                                {
-                                    !hideOrg && (
-                                                <div class="text-xs text-gray-500">
-                                                    {person["org-name"]}
-                                                </div>
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </a>
+                            </a>
 
-                </li>
-        )
-    })}
-</ul>
+                        </li>
+                )
+            })}
+        </ul>
+        )}
+        </Fragment>
+

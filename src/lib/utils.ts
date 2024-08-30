@@ -7,3 +7,7 @@ export const slugToTitleCase = (slug: string) => slug
 export const sortStringsByLength = (strings: string[]): string[] => {
     return strings.sort((a, b) => a.length - b.length);
 };
+
+export const classNames = (...classes): string => {
+    return classes.filter(Boolean).join(' ')
+}

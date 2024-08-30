@@ -17,6 +17,11 @@ const { frontmatter } = Astro.props;
 
 <DefaultLayout>
     <main class="mx-auto max-w-2xl content">
-        <slot/>
+        <h1 class="text-3xl font-bold tracking-tight sm:text-5xl">
+            {frontmatter.title}
+        </h1>
+        <div>
+            <slot/>
+        </div>
     </main>
 </DefaultLayout>

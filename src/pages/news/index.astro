@@ -22,7 +22,7 @@ const news = await getCollection('news');
     <ol class="grid grid-cols-3 gap-y-12 gap-x-12">
         {news.map((entry) => {
             return (
-                    <li class="shadow rounded-lg overflow-clip">
+                    <li class="shadow-xl bg-white dark:bg-dark-surface rounded-lg overflow-clip">
                         <div class="p-6">
                             <img src={entry.data?.cover?.source ?? "/images/og/default.jpg"}
                                  alt="Article Cover"

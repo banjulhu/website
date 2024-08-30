@@ -14,8 +14,13 @@ export default {
                 brand: {
                     "primary": "#F57D20"
                 },
-                basic: {
-                    "black": "#1b2021",
+                dark: {
+                    "background": "#121212",
+                    "surface": "#161616",
+                    "primary": "#F57D20",
+                    "on-background": "",
+                    "on-surface": "",
+                    "on-primary": "#F57D20"
                 }
             }
         },

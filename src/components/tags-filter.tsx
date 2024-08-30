@@ -45,30 +45,30 @@ export default function TagsFilter({ name, tags = [] }: { name: string; tags: Ta
             {tags.map(({ id, label, value }) => {
                 const isSelected = selectedTags.includes(id);
                 return (
-                    <div key={`${id}`}
-                         className={`items-center rounded-full border border-gray-300 dark:border-gray-500 bg-slate-50 dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-300 ${isSelected ? "bg-indigo-100! border-indigo-300!" : ""}`}>
-                        <input
-                            id={`tags-filter-${id}`}
-                            name={name}
-                            value={value}
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={() => toggleTag(id)}
-                            className="hidden h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                        />
+                    <div key={`${id}`} // TODO: FIX the hover color
+                         className={`items-center rounded-full bg-slate-50 dark:bg-dark-surface text-gray-500 dark:text-gray-300 border border-gray-300 dark:border-gray-700 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:checked:bg-none hover:text-gray-500 dark:hover:text-gray-300 has-[:checked]:dark:hover:bg-none has-[:checked]:bg-brand-primary has-[:checked]:text-white has-[:checked]:border-orange-700`}>
                         <label
                             onClick={() => toggleTag(id)}
-                            className="items-center py-1 px-3 inline-flex flex-shrink-0 rounded-full hover:bg-gray-200 hover:text-gray-500 cursor-pointer">
+                            className={`items-center py-1 px-3 inline-flex flex-shrink-0 rounded-full cursor-pointer`}>
                             {label}
                             {isSelected && (
                                 <span
-                                    className="ml-2 text-gray-400 hover:text-gray-600 cursor-pointer"
+                                    className="ml-2"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         toggleTag(id);
                                     }}>✕
                                 </span>
                             )}
+                            <input
+                                id={`tags-filter-${id}`}
+                                name={name}
+                                value={value}
+                                type="checkbox"
+                                checked={isSelected}
+                                onChange={() => toggleTag(id)}
+                                className="hidden"
+                            />
                         </label>
                     </div>
                 );

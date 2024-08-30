@@ -1,9 +1,10 @@
 import { SiFlickr, SiLinkedin, SiYoutube } from "react-icons/si";
 import { FaTwitter } from "react-icons/fa";
+import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="bg-basic-black mt-24" aria-labelledby="footer-heading">
+        <footer className="bg-slate-50 dark:bg-dark-surface mt-24" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">Footer</h2>
             <div className="mx-auto max-w-full px-6 pb-8 pt-12 sm:pt-24 lg:px-8 lg:pt-24 flex flex-col-reverse gap-y-6">
                 <NewsletterSubscription/>
@@ -22,9 +23,14 @@ const ElixirBrand = () => {
         <div className="flex flex-col gap-y-8 order-first col-span-full justify-between md:col-span-1">
             <a href="/">
                 <img
-                    className="h-24 w-auto"
+                    alt="ELIXIR.NO Logo"
                     src="/images/logos/elixir-no-light.svg"
-                    alt="Elixir Norway"
+                    className="hidden dark:block h-24 w-auto"
+                />
+                <img
+                    alt="ELIXIR.NO Logo"
+                    src="/images/logos/elixir-no-dark.svg"
+                    className="block dark:hidden h-24 w-auto"
                 />
             </a>
             <div className="flex space-x-4">
@@ -57,52 +63,34 @@ const ElixirOrgs = () => {
     return (
         <div className="col-span-full order-last md:order-2 md:col-span-5">
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-4 mx-auto">
-                <a href="https://uib.no/" target="_blank">
-                    <img
-                        src="/images/logos/orgs/uib.svg"
-                        alt="UiB logo"
-                        className="brightness-0 invert w-auto h-16"
-                    />
-                </a>
-                <a href="https://uio.no/" target="_blank">
-                    <img
-                        src="/images/logos/orgs/uio.svg"
-                        alt="UiO logo"
-                        className="brightness-0 invert w-auto h-16"
-                    />
-                </a>
-                <a href="https://uit.no/" target="_blank">
-                    <img
-                        src="/images/logos/orgs/uit.svg"
-                        alt="UiT logo"
-                        className="brightness-0 invert w-auto h-16"
-                    />
-                </a>
-                <a href="https://ntnu.no/" target="_blank">
-                    <img
-                        src="/images/logos/orgs/ntnu.svg"
-                        alt="UiT logo"
-                        className="brightness-0 invert w-auto h-16"
-                    />
-                </a>
-                <a href="https://nmbu.no/" target="_blank">
-                    <img
-                        src="/images/logos/orgs/nmbu.svg"
-                        alt="UiT logo"
-                        className="brightness-0 invert w-auto h-16"
-                    />
-                </a>
+                {[
+                    ["https://uib.no/", "/images/logos/orgs/uib.svg", "UiB logo"],
+                    ["https://uio.no/", "/images/logos/orgs/uio.svg", "UiO logo"],
+                    ["https://uit.no/", "/images/logos/orgs/uit.svg", "UiT logo"],
+                    ["https://ntnu.no/", "/images/logos/orgs/ntnu.svg", "NTNU logo"],
+                    ["https://nmbu.no/", "/images/logos/orgs/nmbu.svg", "NMBU logo"],
+                ].map(([href, imageUrl, alt]) => {
+                    return (
+                        <a href={href} target="_blank">
+                            <img
+                                src={imageUrl}
+                                alt={alt}
+                                className="brightness-0 dark:invert w-auto h-16"
+                            />
+                        </a>
+                    )
+                })}
             </div>
             <div className="flex items-center justify-center">
                 <a href="https://forskningsradet.no/" target="_blank">
                     <img
                         src="/images/logos/orgs/nfr.svg"
                         alt="Forskningsradet logo"
-                        className="brightness-0 invert w-auto h-20"
+                        className="brightness-0 dark:invert w-auto h-20"
                     />
                 </a>
             </div>
-            <p className="text-sm leading-5 text-gray-400 text-center lg:max-w-2xl m-auto self-end place-content-end place-items-ends">
+            <p className="text-sm text-center lg:max-w-2xl m-auto self-end place-content-end place-items-ends">
                 Financed by the Research Council of Norway’s grants 208481, 270068, 295932,
                 the University of Bergen, the University of Oslo, the Arctic University
                 of Norway in Tromsø, the Norwegian University of Science and Technology
@@ -117,10 +105,10 @@ const Links = () => {
         <div
             className="col-span-full text-right self-center justify-center align-bottom items-end order-2 md:order-last  md:col-span-1">
             <div role="list" className="flex sm:flex-row lg:flex-col gap-x-2 justify-items-center">
-                <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">Helpdesk</a>
-                <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">Careers</a>
-                <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">Privacy Policy</a>
-                <a href="#" className="text-sm leading-6 text-gray-300 hover:text-white">Sitemap</a>
+                <a href="#" className="text-sm leading-6">Helpdesk</a>
+                <a href="#" className="text-sm leading-6">Careers</a>
+                <a href="#" className="text-sm leading-6">Privacy Policy</a>
+                <a href="#" className="text-sm leading-6">Sitemap</a>
             </div>
         </div>
     );
@@ -129,7 +117,7 @@ const Links = () => {
 const NewsletterSubscription = () => {
     return (
         <div className="mt-4 border-t border-gray-900/10 lg:flex lg:items-center lg:justify-between">
-            <div>
+            <div className="mt-6">
                 <h3 className="text-base font-semibold leading-6">
                     Subscribe to our newsletter
                 </h3>
@@ -138,18 +126,18 @@ const NewsletterSubscription = () => {
                     delivered straight to your inbox.
                 </p>
             </div>
-            <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
+            <form className="mt-6 sm:flex sm:max-w-md">
                 <label htmlFor="email-address" className="sr-only">Email address</label>
                 <input type="email"
                        name="email-address"
                        id="email-address"
                        autoComplete="email"
                        required
-                       className="w-full min-w-0 appearance-none rounded-md border-0 bg-basic-space-gray px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:w-56 sm:text-sm sm:leading-6"
+                       className="w-full min-w-0 appearance-none rounded-md border-0 bg-slate-50 dark:bg-dark-surface px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:w-56 sm:text-sm sm:leading-6"
                        placeholder="Enter your email"/>
                 <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
                     <button type="submit"
-                            className="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Subscribe
+                            className="flex w-full items-center justify-center rounded-md bg-brand-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-primary hover:saturate-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Subscribe
                     </button>
                 </div>
             </form>

@@ -14,44 +14,42 @@ import { FcOnlineSupport } from "react-icons/fc";
     <Content components={components}/>
 
     <div slot="left" class="flex flex-col gap-y-6">
-        <Card
-                icon={FcOnlineSupport}
-                margin={false}
-                title="We offer the following types of support for you:">
-            <SidebarList
-                    items={[
-                        "General advice and experimental design consultancy",
-                        "Programming and scripting assistance",
-                        "Data Analysis",
-                        "Data Management",
-                        "Data Archiving",
-                    ]}
-            />
-        </Card>
-        <Card icon={FcDatabase}
-              margin={false}
-              title="We have experience working with various data types, including but not limited to:">
-            <SidebarList
-                    items={[
-                        "High-throughput sequence data (DNA/RNA)",
-                        "Proteomics data",
-                        "Chip-seq data",
-                        "Structural data",
-                    ]}
-            />
-        </Card>
-        <Card icon={FcBiotech}
-              margin={false}
-              title="We have expertise in a wide range of biological and medical fields, including:">
-            <SidebarList
-                    items={[
-                        "High-throughput sequence data (DNA/RNA)",
-                        "Proteomics data",
-                        "Chip-seq data",
-                        "Structural data",
-                    ]}
-            />
-        </Card>
+        <SidebarList
+                title="We offer the following types of support for you: -"
+                items={[
+                    "General advice and experimental design consultancy",
+                    "Programming and scripting assistance",
+                    "Data Analysis",
+                    "Data Management",
+                    "Data Archiving",
+                ]}
+        />
+        <SidebarList
+                title="We have experience working with various data types, including but not limited to:"
+                items={[
+                    "High-throughput sequence data (DNA/RNA)",
+                    "Proteomics data",
+                    "Chip-seq data",
+                    "Structural data",
+                ]}
+        />
+        <SidebarList
+                title="We have expertise in a wide range of biological and medical fields, including:"
+                items={[
+                    "Genome and transcriptome assembly",
+                    "Variant calling",
+                    "Annotation",
+                    "Gene expression, coding and noncoding",
+                    "Methylation and epigenetics",
+                    "Statistical genomics",
+                    "Network analysis",
+                    "Metagenomics",
+                    "Microbial genomics",
+                    "Cancer",
+                    "Health",
+                    "Marine",
+                ]}
+        />
     </div>
 
 </Projects>

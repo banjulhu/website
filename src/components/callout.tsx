@@ -6,10 +6,10 @@ const Callout = ({ variant = 'info', title, children }) => {
 
     const variants = {
         info: {
-            bgColor: 'bg-blue-50',
-            textColor: 'text-blue-800',
+            bgColor: 'bg-blue-50 dark:bg-blue-800/25',
+            textColor: 'text-blue-800 dark:text-blue-200',
             icon: MdInfo,
-            iconColor: 'text-blue-400',
+            iconColor: 'text-blue-400 dark:text-blue-200',
         },
         success: {
             bgColor: 'bg-green-50',

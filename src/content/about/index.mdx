@@ -9,6 +9,7 @@ import Universities from "../../components/universities.tsx";
 import People from "../../components/people.astro";
 import SimpleIconCards from "../../components/simple-icon-cards.astro";
 import DetailedFeature from "../../components/sections/detailed-feature.astro";
+import Data from "../../data/people.json";
 
 <TwoColHero>
     <TwoColHero.Header>Collaborative Life Science Hub Linking Five Organizations to [Elixir
@@ -30,26 +31,29 @@ import DetailedFeature from "../../components/sections/detailed-feature.astro";
     </Fragment>
     <div className="mt-12">
         <Universities/>
-        <div className="mt-24 flex flex-col gap-y-14">
-            <div>
+        <div className="mt-24 mx-auto flex flex-wrap rounded-lg w-full gap-y-14 max-w-5xl relative isolate bg-gray-50 dark:bg-dark-surface py-12 px-10 sm:rounded-3xl">
+            <div className="">
                 <h2 className="text-3xl font-bold mb-8">Node Leaders</h2>
-                <People elixirGroup="node-leaders"/>
+                <People elixirGroup="node-leaders" layout="two-col"/>
             </div>
-            <div>
+            <div >
                 <h2 className="text-3xl font-bold mb-8">Coordinators</h2>
-                <People elixirGroup="coordinators"/>
+                <People elixirGroup="coordinators" layout="two-col"/>
             </div>
             <div>
                 <h2 className="text-3xl font-bold mb-8">Steering Board</h2>
-                <People elixirGroup="steering-board"/>
+                <People elixirGroup="steering-board" layout="two-col"/>
             </div>
             <div>
                 <h2 className="text-3xl font-bold mb-8">Scientific Advisory Committee</h2>
-                <People elixirGroup="scientific-advisory-committee" hidePicture/>
+                <People elixirGroup="scientific-advisory-committee" layout="two-col"/>
             </div>
             <div>
                 <h2 className="text-3xl font-bold mb-8">Stakeholder Panel</h2>
-                <People elixirGroup="stakeholder-panel" hidePicture/>
+                <People elixirGroup="stakeholder-panel" layout="two-col"/>
+            </div>
+            <div className="flex items-center justify-center">
+                <People isSummary/>
             </div>
         </div>
     </div>
