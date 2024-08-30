@@ -6,9 +6,9 @@ const Footer = () => {
     return (
         <footer className="bg-slate-50 dark:bg-dark-surface mt-24" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">Footer</h2>
-            <div className="mx-auto max-w-full px-6 pb-8 pt-12 sm:pt-24 lg:px-8 lg:pt-24 flex flex-col-reverse gap-y-6">
+            <div className="mx-auto max-w-full p-12 flex flex-col-reverse gap-y-6">
                 <NewsletterSubscription/>
-                <div className="grid grid-cols-7 grid-rows-3 lg:grid-rows-1">
+                <div className="flex flex-col lg:flex-row gap-y-6">
                     <ElixirBrand/>
                     <ElixirOrgs/>
                     <Links/>
@@ -20,8 +20,8 @@ const Footer = () => {
 
 const ElixirBrand = () => {
     return (
-        <div className="flex flex-col gap-y-8 order-first col-span-full justify-between md:col-span-1">
-            <a href="/">
+        <div className="flex flex-row lg:flex-col items-center justify-items-center gap-y-8 order-first col-span-full justify-between md:col-span-1">
+            <a href="/" className="sm:order-1">
                 <img
                     alt="ELIXIR.NO Logo"
                     src="/images/logos/elixir-no-light.svg"
@@ -33,7 +33,7 @@ const ElixirBrand = () => {
                     className="block dark:hidden h-24 w-auto"
                 />
             </a>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 sm:order-2">
                 <SocialButton
                     name="Twitter"
                     link="https://twitter.com/elixirnorway"
@@ -61,7 +61,7 @@ const ElixirBrand = () => {
 
 const ElixirOrgs = () => {
     return (
-        <div className="col-span-full order-last md:order-2 md:col-span-5">
+        <div className="flex-1 md:order-2 md:col-span-5">
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-4 mx-auto">
                 {[
                     ["https://uib.no/", "/images/logos/orgs/uib.svg", "UiB logo"],
@@ -75,7 +75,7 @@ const ElixirOrgs = () => {
                             <img
                                 src={imageUrl}
                                 alt={alt}
-                                className="brightness-0 dark:invert w-auto h-16"
+                                className="brightness-0 dark:invert w-auto h-14 lg:h-16 scale-75 lg:scale-100"
                             />
                         </a>
                     )
@@ -90,7 +90,7 @@ const ElixirOrgs = () => {
                     />
                 </a>
             </div>
-            <p className="text-sm text-center lg:max-w-2xl m-auto self-end place-content-end place-items-ends">
+            <p className="text-sm text-center lg:max-w-2xl m-auto flex-1">
                 Financed by the Research Council of Norway’s grants 208481, 270068, 295932,
                 the University of Bergen, the University of Oslo, the Arctic University
                 of Norway in Tromsø, the Norwegian University of Science and Technology
@@ -103,11 +103,11 @@ const ElixirOrgs = () => {
 const Links = () => {
     return (
         <div
-            className="col-span-full text-right self-center justify-center align-bottom items-end order-2 md:order-last  md:col-span-1">
-            <div role="list" className="flex sm:flex-row lg:flex-col gap-x-2 justify-items-center">
+            className="sm:order-3 lg:order-2 text-right self-center justify-center align-bottom items-end order-2 md:order-last  md:col-span-1">
+            <div role="list" className="flex sm:flex-row lg:flex-col gap-y-4 gap-x-2 justify-items-center">
                 <a href="#" className="text-sm leading-6">Helpdesk</a>
                 <a href="#" className="text-sm leading-6">Careers</a>
-                <a href="#" className="text-sm leading-6">Privacy Policy</a>
+                <a href="#" className="text-sm leading-6">Organizations</a>
                 <a href="#" className="text-sm leading-6">Sitemap</a>
             </div>
         </div>
