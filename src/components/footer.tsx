@@ -8,7 +8,7 @@ const Footer = () => {
             <h2 id="footer-heading" className="sr-only">Footer</h2>
             <div className="mx-auto max-w-full p-12 flex flex-col-reverse gap-y-6">
                 <NewsletterSubscription/>
-                <div className="flex flex-col lg:flex-row gap-y-6">
+                <div className="grid grid-cols-4 grid-flow-row auto-rows-min gap-y-12">
                     <ElixirBrand/>
                     <ElixirOrgs/>
                     <Links/>
@@ -20,40 +20,42 @@ const Footer = () => {
 
 const ElixirBrand = () => {
     return (
-        <div className="flex flex-row lg:flex-col items-center justify-items-center gap-y-8 order-first col-span-full justify-between md:col-span-1">
-            <a href="/" className="sm:order-1">
-                <img
-                    alt="ELIXIR.NO Logo"
-                    src="/images/logos/elixir-no-light.svg"
-                    className="hidden dark:block h-24 w-auto"
-                />
-                <img
-                    alt="ELIXIR.NO Logo"
-                    src="/images/logos/elixir-no-dark.svg"
-                    className="block dark:hidden h-24 w-auto"
-                />
-            </a>
-            <div className="flex space-x-4 sm:order-2">
-                <SocialButton
-                    name="Twitter"
-                    link="https://twitter.com/elixirnorway"
-                    icon={<FaTwitter className="h-8 w-8"/>}
-                />
-                <SocialButton
-                    name="LinkedIn"
-                    link="https://www.linkedin.com/company/elixir-europe"
-                    icon={<SiLinkedin className="h-8 w-8"/>}
-                />
-                <SocialButton
-                    name="YouTube"
-                    link="https://www.youtube.com/channel/UCvwFIw5HomylguGOGxR8B8w"
-                    icon={<SiYoutube className="h-8 w-8"/>}
-                />
-                <SocialButton
-                    name="Flickr"
-                    link="https://www.flickr.com/photos/elixir-europe/"
-                    icon={<SiFlickr className="h-8 w-8"/>}
-                />
+        <div className="col-span-full lg:col-span-1 place-content-end">
+            <div className="flex sm:flex-row justify-between items-end lg:items-start lg:flex-col lg:gap-y-12">
+                <a href="/" className="sm:order-1">
+                    <img
+                        alt="ELIXIR.NO Logo"
+                        src="/images/logos/elixir-no-light.svg"
+                        className="hidden dark:block h-24 w-auto"
+                    />
+                    <img
+                        alt="ELIXIR.NO Logo"
+                        src="/images/logos/elixir-no-dark.svg"
+                        className="block dark:hidden h-24 w-auto"
+                    />
+                </a>
+                <div className="flex space-x-4 sm:order-2">
+                    <SocialButton
+                        name="Twitter"
+                        link="https://twitter.com/elixirnorway"
+                        icon={<FaTwitter className="h-8 w-8"/>}
+                    />
+                    <SocialButton
+                        name="LinkedIn"
+                        link="https://www.linkedin.com/company/elixir-europe"
+                        icon={<SiLinkedin className="h-8 w-8"/>}
+                    />
+                    <SocialButton
+                        name="YouTube"
+                        link="https://www.youtube.com/channel/UCvwFIw5HomylguGOGxR8B8w"
+                        icon={<SiYoutube className="h-8 w-8"/>}
+                    />
+                    <SocialButton
+                        name="Flickr"
+                        link="https://www.flickr.com/photos/elixir-europe/"
+                        icon={<SiFlickr className="h-8 w-8"/>}
+                    />
+                </div>
             </div>
         </div>
     );
@@ -61,7 +63,7 @@ const ElixirBrand = () => {
 
 const ElixirOrgs = () => {
     return (
-        <div className="flex-1 md:order-2 md:col-span-5">
+        <div className="col-span-full lg:col-span-2 flex-1">
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-4 mx-auto">
                 {[
                     ["https://uib.no/", "/images/logos/orgs/uib.svg", "UiB logo"],
@@ -102,9 +104,8 @@ const ElixirOrgs = () => {
 
 const Links = () => {
     return (
-        <div
-            className="sm:order-3 lg:order-2 text-right self-center justify-center align-bottom items-end order-2 md:order-last  md:col-span-1">
-            <div role="list" className="flex sm:flex-row lg:flex-col gap-y-4 gap-x-2 justify-items-center">
+        <div className="col-span-full lg:col-span-1 text-right place-content-end place-items-end place-self-center lg:place-self-end">
+            <div role="list" className="flex sm:flex-row lg:flex-col gap-y-4 gap-x-2">
                 <a href="#" className="text-sm leading-6">Helpdesk</a>
                 <a href="#" className="text-sm leading-6">Careers</a>
                 <a href="#" className="text-sm leading-6">Organizations</a>
