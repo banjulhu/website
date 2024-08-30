@@ -2,19 +2,19 @@
 const { figSrc, figCaption } = Astro.props;
 ---
 
-<section class="relative isolate overflow-hidden bg-gray-50 py-12 sm:rounded-3xl sm:px-10">
+<section class="relative isolate overflow-hidden bg-gray-50 dark:bg-dark-surface py-12 sm:rounded-3xl sm:px-10">
     <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
         <div class="lg:row-start-2 lg:max-w-md">
             <slot/>
         </div>
         <figure
-                class="relative -z-20 min-w-full max-w-xl rounded-xl ring-1 ring-white/10 lg:row-span-6 lg:max-w-none">
+                class="relative -z-20 min-w-full max-w-xl rounded-xl lg:row-span-6 lg:max-w-none">
             <img
                     alt="Product screenshot"
                     src={figSrc}
                     class="rounded-lg"
             />
-            <figcaption class="mt-4 text-sm text-center">{figCaption}</figcaption>
+            <figcaption class="mt-4 px-2 text-sm text-center">{figCaption}</figcaption>
         </figure>
     </div>
     <div
