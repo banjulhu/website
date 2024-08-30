@@ -77,7 +77,7 @@ const ElixirOrgs = () => {
                             <img
                                 src={imageUrl}
                                 alt={alt}
-                                className="brightness-0 dark:invert w-auto h-14 lg:h-16 scale-75 lg:scale-100"
+                                className="invert-25 dark:invert-85 w-auto h-14 lg:h-16 scale-75 lg:scale-100"
                             />
                         </a>
                     )
@@ -88,7 +88,7 @@ const ElixirOrgs = () => {
                     <img
                         src="/images/logos/orgs/nfr.svg"
                         alt="Forskningsradet logo"
-                        className="brightness-0 dark:invert w-auto h-20"
+                        className="invert-25 dark:invert-85 w-auto h-20"
                     />
                 </a>
             </div>
@@ -105,7 +105,7 @@ const ElixirOrgs = () => {
 const Links = () => {
     return (
         <div className="col-span-full lg:col-span-1 text-right place-content-end place-items-end place-self-center lg:place-self-end">
-            <div role="list" className="flex sm:flex-row lg:flex-col gap-y-4 gap-x-2">
+            <div role="list" className="flex sm:flex-row lg:flex-col gap-y-2 gap-x-2">
                 <a href="#" className="text-sm leading-6">Helpdesk</a>
                 <a href="#" className="text-sm leading-6">Careers</a>
                 <a href="#" className="text-sm leading-6">Organizations</a>
@@ -134,11 +134,11 @@ const NewsletterSubscription = () => {
                        id="email-address"
                        autoComplete="email"
                        required
-                       className="w-full min-w-0 appearance-none rounded-md border-0 bg-slate-50 dark:bg-dark-surface px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:w-56 sm:text-sm sm:leading-6"
+                       className="w-full min-w-0 appearance-none rounded-md border-0 bg-slate-50 dark:bg-dark-surface px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-primary sm:w-56 sm:text-sm sm:leading-6"
                        placeholder="Enter your email"/>
                 <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
                     <button type="submit"
-                            className="flex w-full items-center justify-center rounded-md bg-brand-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-primary hover:saturate-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Subscribe
+                            className="flex w-full items-center justify-center rounded-md bg-brand-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-primary hover:saturate-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary">Subscribe
                     </button>
                 </div>
             </form>

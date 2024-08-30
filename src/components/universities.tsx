@@ -41,7 +41,7 @@ const Entry = ({ src, alt, location, href }) => {
                 <img
                     src={src}
                     alt={alt + " logo"}
-                    className="w-full h-full dark:invert object-contain hover:scale-95 hover:opacity-75 transition-all delay-75"
+                    className="w-full h-full invert-25 dark:invert-85 object-contain hover:scale-95 hover:opacity-75 transition-all delay-75"
                 />
             </div>
             <p className="font-medium text-lg">{location}</p>
