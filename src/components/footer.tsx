@@ -83,29 +83,28 @@ const ElixirOrgs = () => {
                     )
                 })}
             </div>
-            <div className="flex items-center justify-center">
-                <a href="https://forskningsradet.no/" target="_blank">
-                    <img
-                        src="/images/logos/orgs/nfr.svg"
-                        alt="Forskningsradet logo"
-                        className="invert-25 dark:invert-85 w-auto h-20"
-                    />
-                </a>
-            </div>
-            <div className="flex items-center justify-center">
-                <a href="https://research-and-innovation.ec.europa.eu/" target="_blank">
-                    <img
-                        src="/images/logos/orgs/eu.svg"
-                        alt="EU co-funded logo"
-                        className="invert-25 dark:invert-85 w-auto h-20"
-                    />
-                </a>
+            <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 mx-auto">
+                {[
+                    ["https://forskningsradet.no/", "/images/logos/orgs/nfr.svg", "Research Council of Norway logo"],
+                    ["https://www.nordforsk.org", "/images/logos/orgs/nordforsk.svg", "Nordforsk logo"],
+                    ["https://research-and-innovation.ec.europa.eu/", "/images/logos/orgs/eu.svg", "EU co-funded logo"],
+                ].map(([href, imageUrl, alt]) => {
+                    return (
+                        <a href={href} target="_blank">
+                            <img
+                                src={imageUrl}
+                                alt={alt}
+                                className="invert-25 dark:invert-85 w-auto h-14 lg:h-16 scale-75 lg:scale-100"
+                            />
+                        </a>
+                    )
+                })}
             </div>
             <p className="text-sm text-center lg:max-w-2xl m-auto flex-1">
                 Financed by the Research Council of Norway’s grants 208481, 270068, 295932, 
                 the University of Bergen, the University of Oslo, the Arctic University
                 of Norway in Tromsø, the Norwegian University of Science and Technology, 
-                the Norwegian University of Life Sciences: NMBU and co-funded by the European Union.
+                the Norwegian University of Life Sciences: NMBU, Nordforsk and co-funded by the European Union.
             </p>
         </div>
     );
