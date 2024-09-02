@@ -88,16 +88,14 @@ const ElixirOrgs = () => {
                     <img
                         src="/images/logos/orgs/nfr.svg"
                         alt="Forskningsradet logo"
-                        className="invert-25 dark:invert-85 w-auto h-20"
+                        className="invert-25 dark:invert-85 w-48"
                     />
                 </a>
-            </div>
-            <div className="flex items-center justify-center">
                 <a href="https://research-and-innovation.ec.europa.eu/" target="_blank">
                     <img
                         src="/images/logos/orgs/eu.svg"
                         alt="EU co-funded logo"
-                        className="invert-25 dark:invert-85 w-auto h-20"
+                        className="invert-25 dark:invert-85 w-48"
                     />
                 </a>
             </div>
