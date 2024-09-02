@@ -68,7 +68,7 @@ const filteredPeople = peopleWithMeta
         <ul class={`grid gap-y-4 gap-x-4 place-content-center ${layout === "two-col" ? "grid-cols-2" : "grid-cols-1"}`}>
             {filteredPeople.map((person) => {
                 return (
-                        <li class="col-span-full md:col-span-1 w-full">
+                        <li class="bg-yellow-50 col-span-full md:col-span-1 w-full">
                             <a href={person["profile-url"]}
                                target="_blank"
                                rel="noopener noreferrer"
@@ -86,7 +86,7 @@ const filteredPeople = peopleWithMeta
                                         {person.name}
                                     </div>
                                     <div class="flex flex-col gap-y-1 text-slate-700 dark:text-slate-200">
-                                        <div class="text-xs flex-1">{person["full-title"]}</div>
+                                        <div class="text-xs flex-1 max-w-72">{person["full-title"]}</div>
                                         {
                                             !hideOrg && (
                                                         <div class="text-xs text-slate-600 dark:text-slate-300">
