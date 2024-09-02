@@ -21,12 +21,12 @@ const Footer = () => {
 const ElixirBrand = () => {
     return (
         <div className="col-span-full lg:col-span-1 place-content-end">
-            <div className="flex sm:flex-row justify-between items-end lg:items-start lg:flex-col lg:gap-y-12">
+            <div className="flex flex-col justify-between items-center lg:items-start gap-y-12">
                 <a href="/" className="sm:order-1">
                     <img
                         alt="ELIXIR.NO Logo"
                         src="/images/logos/elixir-no-light.svg"
-                        className="hidden dark:block h-24 w-auto"
+                        className="hidden dark:block h-28 lg:h-36 w-auto"
                     />
                     <img
                         alt="ELIXIR.NO Logo"
@@ -63,8 +63,8 @@ const ElixirBrand = () => {
 
 const ElixirOrgs = () => {
     return (
-        <div className="col-span-full lg:col-span-2 flex-1">
-            <div className="flex flex-row flex-wrap items-center justify-center gap-x-4 mx-auto">
+        <div className="col-span-full lg:col-span-2 flex flex-col justify-between gap-y-6">
+            <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 lg:gap-x-4 mx-auto">
                 {[
                     ["https://uib.no/", "/images/logos/orgs/uib.svg", "UiB logo"],
                     ["https://uio.no/", "/images/logos/orgs/uio.svg", "UiO logo"],
@@ -77,13 +77,13 @@ const ElixirOrgs = () => {
                             <img
                                 src={imageUrl}
                                 alt={alt}
-                                className="invert-25 dark:invert-85 w-auto h-14 lg:h-16 scale-75 lg:scale-100"
+                                className="invert-25 dark:invert-85 w-auto h-16 scale-75 lg:scale-100"
                             />
                         </a>
                     )
                 })}
             </div>
-            <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 mx-auto">
+            <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:gap-x-4 mx-auto">
                 {[
                     ["https://forskningsradet.no/", "/images/logos/orgs/nfr.svg", "Research Council of Norway logo"],
                     ["https://www.nordforsk.org", "/images/logos/orgs/nordforsk.svg", "Nordforsk logo"],
@@ -94,13 +94,13 @@ const ElixirOrgs = () => {
                             <img
                                 src={imageUrl}
                                 alt={alt}
-                                className="invert-25 dark:invert-85 w-auto h-14 lg:h-16 scale-75 lg:scale-100"
+                                className="invert-25 dark:invert-85 w-44 h-auto scale-75 lg:scale-100"
                             />
                         </a>
                     )
                 })}
             </div>
-            <p className="text-sm text-center lg:max-w-2xl m-auto flex-1">
+            <p className="text-sm text-pretty text-center lg:max-w-2xl m-auto flex-1">
                 Financed by the Research Council of Norway’s grants 208481, 270068, 295932, 
                 the University of Bergen, the University of Oslo, the Arctic University
                 of Norway in Tromsø, the Norwegian University of Science and Technology, 
