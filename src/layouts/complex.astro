@@ -18,7 +18,7 @@ const props = Astro.props;
                 (Astro.slots.has("right") &&
                     Astro.slots.has("left")) ?
                     "max-w-full flex-1" :
-                    "max-w-3xl container"
+                    "max-w-2xl container"
             }`>
                 {(props?.title || props?.cover) &&
                         <div class={`${!props?.cover ? "mb-8" : ""} mx-auto max-w-2xl lg:mx-0 flex flex-col gap-y-2`}>
@@ -34,9 +34,9 @@ const props = Astro.props;
                                 )
                             }
                             {props?.cover && (
-                                    <figure class="my-10">
+                                    <figure class="my-12 max-w-full">
                                         <img alt="Article Cover Image" src={props?.cover?.source}
-                                             class="w-auto rounded m-auto"/>
+                                             class="w-full rounded mx-auto"/>
                                         <figcaption class="text-sm mt-2 text-slate-600">
                                             {props?.cover?.caption ?? ""}
                                         </figcaption>

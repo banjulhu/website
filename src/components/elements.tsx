@@ -3,8 +3,10 @@ import { FaQuoteLeft } from "react-icons/fa";
 
 export const A: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = (props) => (
     <a {...props}
+       className="link"
        rel="noreferrer noopener"
-       target="_blank"/>
+       target="_blank"
+    />
 );
 
 export const UL: React.FC<React.HTMLAttributes<HTMLUListElement>> = ({ children, ...props }) => (
@@ -65,10 +67,10 @@ export const Figure: React.FC<React.HTMLAttributes<HTMLElement>> = ({ children, 
 // noinspection HtmlRequiredAltAttribute
 export const Img: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
     !props.title
-        ? <img {...props} className="max-w-full h-auto rounded-md m-auto my-8"/>
+        ? <img {...props} className="w-full h-auto rounded-md mx-auto my-8"/>
         : (
-            <figure>
-                <img {...props} className="max-w-full h-auto rounded-md m-auto my-8"/>
+            <figure className="w-full mx-auto">
+                <img {...props} className="w-full h-auto rounded-md mx-auto my-8"/>
                 <figcaption className="text-slate-400 text-sm italic text-center my-2">{props.title}</figcaption>
             </figure>
         )
@@ -95,7 +97,8 @@ export const Table: React.FC<React.TableHTMLAttributes<HTMLTableElement>> = ({ c
 );
 
 export const Th: React.FC<React.ThHTMLAttributes<HTMLTableHeaderCellElement>> = (props) => (
-    <th {...props} className="bg-slate-50 dark:bg-dark-surface border border-gray-300 px-4 py-2 text-left font-semibold"/>
+    <th {...props}
+        className="bg-slate-50 dark:bg-dark-surface border border-gray-300 px-4 py-2 text-left font-semibold"/>
 );
 
 export const Td: React.FC<React.TdHTMLAttributes<HTMLTableDataCellElement>> = (props) => (
@@ -109,7 +112,6 @@ export const Em: React.FC<any> = (props) => (
 export const Strong: React.FC<any> = (props) => (
     <strong {...props} className="font-bold"/>
 );
-
 
 
 export const components = {

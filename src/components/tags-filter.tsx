@@ -6,6 +6,14 @@ export type Tag = {
     label: string;
 };
 
+// hover:bg-gray-200 dark:hover:bg-gray-600
+// hover:checked:bg-none hover:text-gray-500
+// dark:hover:text-gray-300
+// has-[:checked]:dark:hover:bg-none
+// has-[:checked]:bg-brand-primary
+// has-[:checked]:text-white
+// has-[:checked]:border-orange-700
+
 export default function TagsFilter({ name, tags = [] }: { name: string; tags: Tag[] }) {
 
     const [selectedTags, setSelectedTags] = useState<(number | string)[]>([]);
@@ -45,15 +53,14 @@ export default function TagsFilter({ name, tags = [] }: { name: string; tags: Ta
             {tags.map(({ id, label, value }) => {
                 const isSelected = selectedTags.includes(id);
                 return (
-                    <div key={`${id}`} // TODO: FIX the hover color
-                         className={`items-center rounded-full bg-slate-50 dark:bg-dark-surface text-gray-500 dark:text-gray-300 border border-gray-300 dark:border-gray-700 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:checked:bg-none hover:text-gray-500 dark:hover:text-gray-300 has-[:checked]:dark:hover:bg-none has-[:checked]:bg-brand-primary has-[:checked]:text-white has-[:checked]:border-orange-700`}>
+                    <div key={`${id}`}>
                         <label
                             onClick={() => toggleTag(id)}
-                            className={`items-center py-1 px-3 inline-flex flex-shrink-0 rounded-full cursor-pointer`}>
+                            className={`items-center py-1 px-3 inline-flex flex-shrink-0 rounded-full cursor-pointer text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-500 dark:text-gray-300 border border-gray-300 dark:border-gray-700 has-[:checked]:border-brand-primary bg-slate-50 dark:bg-dark-surface has-[:checked]:dark:bg-brand-primary/50`}>
                             {label}
                             {isSelected && (
                                 <span
-                                    className="ml-2"
+                                    className="ml-2 hover:scale-105 hover:font-bold"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         toggleTag(id);
