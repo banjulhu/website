@@ -1,6 +1,6 @@
-# Astro.js Project
+# Elixir.no Website
 
-Welcome to the Astro.js project! This README will help you get started and understand how the project is structured. Let’s dive right in!
+Welcome to the project! This README will help you get started and understand how the project is structured. Let’s dive right in!
 
 ## Prerequisites
 
