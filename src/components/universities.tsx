@@ -4,27 +4,27 @@ const Universities = () => {
     return (
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5 place-content-center">
             <Entry
-                src="/images/logos/orgs/uib.svg"
+                src="/assets/logos/orgs/uib.svg"
                 alt="University of Bergen"
                 location="Bergen"
                 href="/about/bergen"/>
             <Entry
-                src="/images/logos/orgs/uio.svg"
+                src="/assets/logos/orgs/uio.svg"
                 alt="University of Oslo"
                 location="Oslo"
                 href="/about/oslo"/>
             <Entry
-                src="/images/logos/orgs/uit.svg"
+                src="/assets/logos/orgs/uit.svg"
                 alt="The Arctic University of Norway"
                 location="Tromsø"
                 href="/about/tromso"/>
             <Entry
-                src="/images/logos/orgs/nmbu.svg"
+                src="/assets/logos/orgs/nmbu.svg"
                 alt="Norwegian University of Life Sciences"
                 location="Ås"
                 href="/about/aas"/>
             <Entry
-                src="/images/logos/orgs/ntnu.svg"
+                src="/assets/logos/orgs/ntnu.svg"
                 alt="Norwegian University of Science and Technology"
                 location="Trondheim"
                 href="/about/trondheim"/>

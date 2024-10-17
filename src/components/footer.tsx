@@ -25,12 +25,12 @@ const ElixirBrand = () => {
                 <a href="/" className="sm:order-1">
                     <img
                         alt="ELIXIR.NO Logo"
-                        src="/images/logos/elixir-no-light.svg"
+                        src="/assets/logos/elixir-no-light.svg"
                         className="hidden dark:block h-28 lg:h-36 w-auto"
                     />
                     <img
                         alt="ELIXIR.NO Logo"
-                        src="/images/logos/elixir-no-dark.svg"
+                        src="/assets/logos/elixir-no-dark.svg"
                         className="block dark:hidden h-24 w-auto"
                     />
                 </a>
@@ -66,11 +66,11 @@ const ElixirOrgs = () => {
         <div className="col-span-full lg:col-span-2 flex flex-col justify-between gap-y-6">
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 lg:gap-x-4 mx-auto">
                 {[
-                    ["https://uib.no/", "/images/logos/orgs/uib.svg", "UiB logo"],
-                    ["https://uio.no/", "/images/logos/orgs/uio.svg", "UiO logo"],
-                    ["https://uit.no/", "/images/logos/orgs/uit.svg", "UiT logo"],
-                    ["https://ntnu.no/", "/images/logos/orgs/ntnu.svg", "NTNU logo"],
-                    ["https://nmbu.no/", "/images/logos/orgs/nmbu.svg", "NMBU logo"],
+                    ["https://uib.no/", "/assets/logos/orgs/uib.svg", "UiB logo"],
+                    ["https://uio.no/", "/assets/logos/orgs/uio.svg", "UiO logo"],
+                    ["https://uit.no/", "/assets/logos/orgs/uit.svg", "UiT logo"],
+                    ["https://ntnu.no/", "/assets/logos/orgs/ntnu.svg", "NTNU logo"],
+                    ["https://nmbu.no/", "/assets/logos/orgs/nmbu.svg", "NMBU logo"],
                 ].map(([href, imageUrl, alt]) => {
                     return (
                         <a href={href} target="_blank">
@@ -85,9 +85,9 @@ const ElixirOrgs = () => {
             </div>
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:gap-x-4 mx-auto">
                 {[
-                    ["https://forskningsradet.no/", "/images/logos/orgs/nfr.svg", "Research Council of Norway logo"],
-                    ["https://www.nordforsk.org", "/images/logos/orgs/nordforsk.svg", "Nordforsk logo"],
-                    ["https://research-and-innovation.ec.europa.eu/", "/images/logos/orgs/eu.svg", "EU co-funded logo"],
+                    ["https://forskningsradet.no/", "/assets/logos/orgs/nfr.svg", "Research Council of Norway logo"],
+                    ["https://www.nordforsk.org", "/assets/logos/orgs/nordforsk.svg", "Nordforsk logo"],
+                    ["https://research-and-innovation.ec.europa.eu/", "/assets/logos/orgs/eu.svg", "EU co-funded logo"],
                 ].map(([href, imageUrl, alt]) => {
                     return (
                         <a href={href} target="_blank">

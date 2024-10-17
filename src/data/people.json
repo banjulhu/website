@@ -28,7 +28,7 @@
         {
           "name": "Sushma Grellscheid",
           "title": "Professor",
-          "photo": "/images/people/sushma.png",
+          "photo": "/assets/people/sushma.png",
           "profile-url": "https://www4.uib.no/en/find-employees/Sushma.Nagaraja.Grellscheid",
           "affiliations": [],
           "elixir-groups": [
@@ -41,7 +41,7 @@
         {
           "name": "Kjell Petersen",
           "title": "Group Leader at CBU",
-          "photo": "/images/people/kjell-petersen.png",
+          "photo": "/assets/people/kjell-petersen.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Kjell.Petersen",
           "affiliations": [],
           "elixir-groups": [
@@ -54,7 +54,7 @@
         {
           "name": "Korbinian Bösl",
           "title": "Senior Engineer",
-          "photo": "/images/people/korbinian.png",
+          "photo": "/assets/people/korbinian.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Korbinian.B%C3%B6sl",
           "affiliations": [],
           "elixir-groups": [
@@ -67,7 +67,7 @@
         {
           "name": "Ingeborg Winge",
           "title": "Senior Advisor",
-          "photo": "/images/people/ingeborg-winge.png",
+          "photo": "/assets/people/ingeborg-winge.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Ingeborg.Winge",
           "affiliations": [],
           "elixir-groups": [
@@ -80,7 +80,7 @@
         {
           "name": "Inge Jonassen",
           "title": "Head—Department of Informatics",
-          "photo": "/images/people/inge-jonassen.png",
+          "photo": "/assets/people/inge-jonassen.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Inge.Jonassen",
           "affiliations": [],
           "elixir-groups": [
@@ -93,7 +93,7 @@
         {
           "name": "Kidane Tekle",
           "title": "Senior Engineer",
-          "photo": "/images/people/kidane.png",
+          "photo": "/assets/people/kidane.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Kidane.Mebrahtu.Tekle",
           "affiliations": [],
           "elixir-groups": []
@@ -101,7 +101,7 @@
         {
           "name": "David Dolan",
           "title": "Researcher",
-          "photo": "/images/people/david-dolan.png",
+          "photo": "/assets/people/david-dolan.png",
           "profile-url": "https://www4.uib.no/en/find-employees/David.William.Peter.Dolan",
           "affiliations": [],
           "elixir-groups": []
@@ -109,7 +109,7 @@
         {
           "name": "Siri Kallhovd",
           "title": "Senior Engineer",
-          "photo": "/images/people/siri-kallhovd.png",
+          "photo": "/assets/people/siri-kallhovd.png",
           "profile-url": "https://www4.uib.no/en/find-employees/Siri.Kallhovd",
           "affiliations": [],
           "elixir-groups": []
@@ -117,7 +117,7 @@
         {
           "name": "Parisa Geravand",
           "title": "Senior Engineer",
-          "photo": "/images/people/parisa-tejari.png",
+          "photo": "/assets/people/parisa-tejari.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Parisa.Tejari.Geravand",
           "affiliations": [],
           "elixir-groups": []
@@ -125,7 +125,7 @@
         {
           "name": "Matúš Kalaš",
           "title": "Senior Engineer",
-          "photo": "/images/people/matus-kalas.png",
+          "photo": "/assets/people/matus-kalas.png",
           "profile-url": "https://www4.uib.no/en/find-employees/Matus.Kalas",
           "affiliations": [],
           "elixir-groups": []
@@ -133,7 +133,7 @@
         {
           "name": "Christoph Bottin",
           "title": "Head Engineer",
-          "photo": "/images/people/christoph-bottin.png",
+          "photo": "/assets/people/christoph-bottin.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Christoph.Bottin",
           "affiliations": [],
           "elixir-groups": []
@@ -141,7 +141,7 @@
         {
           "name": "Carlos Marcos",
           "title": "Chief Engineer",
-          "photo": "/images/people/carlos.png",
+          "photo": "/assets/people/carlos.png",
           "profile-url": "https://www4.uib.no/en/find-employees/Carlos.Horro.Marcos",
           "affiliations": [],
           "elixir-groups": []
@@ -149,7 +149,7 @@
         {
           "name": "Sondre Batalden",
           "title": "Research Technician",
-          "photo": "/images/people/sondre-batalden.png",
+          "photo": "/assets/people/sondre-batalden.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Sondre.Batalden",
           "affiliations": [],
           "elixir-groups": []
@@ -157,7 +157,7 @@
         {
           "name": "Pedram Keyvani",
           "title": "Head Engineer",
-          "photo": "/images/people/pedram-keyvani.png",
+          "photo": "/assets/people/pedram-keyvani.png",
           "profile-url": "https://www4.uib.no/en/find-employees/Pedram.Ahmadpour.Keyvani",
           "affiliations": [],
           "elixir-groups": []
@@ -165,7 +165,7 @@
         {
           "name": "Sandra Kyrkjebø",
           "title": "Higher Executive Officer",
-          "photo": "/images/people/sandra-kyrkjebo.png",
+          "photo": "/assets/people/sandra-kyrkjebo.png",
           "profile-url": "https://no.linkedin.com/in/sandra-kyrkjeb%C3%B8-4b5b611b7",
           "affiliations": [],
           "elixir-groups": []
@@ -173,7 +173,7 @@
         {
           "name": "Yasin Miran",
           "title": "Senior Engineer",
-          "photo": "/images/people/yasin.png",
+          "photo": "/assets/people/yasin.png",
           "profile-url": "https://www4.uib.no/en/find-employees/Yasin.Tharak.Miran",
           "affiliations": [],
           "elixir-groups": []
@@ -186,7 +186,7 @@
         {
           "name": "Eivind Hovig",
           "title": "Professor, Head of Node",
-          "photo": "/images/people/eivind-hovig.png",
+          "photo": "/assets/people/eivind-hovig.png",
           "profile-url": "https://www.mn.uio.no/ifi/english/people/aca/ehovig/",
           "affiliations": [],
           "elixir-groups": [
@@ -199,7 +199,7 @@
         {
           "name": "Stephan Oepen",
           "title": "Head—Department of Chemistry",
-          "photo": "/images/people/stephan-oepen.png",
+          "photo": "/assets/people/stephan-oepen.png",
           "profile-url": "https://www.mn.uio.no/ifi/english/people/aca/oe/",
           "affiliations": [],
           "elixir-groups": [
@@ -212,7 +212,7 @@
         {
           "name": "Rein Aasland",
           "title": "Professor",
-          "photo": "/images/people/rein-aasland.png",
+          "photo": "/assets/people/rein-aasland.png",
           "profile-url": "https://www.mn.uio.no/ibv/personer/vit/reina/",
           "affiliations": [],
           "elixir-groups": []
@@ -220,7 +220,7 @@
         {
           "name": "Jon Lærdahl",
           "title": "Professor",
-          "photo": "/images/people/jon-kristen.png",
+          "photo": "/assets/people/jon-kristen.png",
           "profile-url": "https://www.mn.uio.no/ifi/personer/vit/jonkl/",
           "affiliations": [],
           "elixir-groups": []
@@ -228,7 +228,7 @@
         {
           "name": "Martina Visnovska",
           "title": null,
-          "photo": "/images/people/martina-visnovska.png",
+          "photo": "/assets/people/martina-visnovska.png",
           "profile-url": null,
           "affiliations": [],
           "elixir-groups": []
@@ -236,7 +236,7 @@
         {
           "name": "Annbjørg Barbakken",
           "title": "Engineer",
-          "photo": "/images/people/annbjorg.png",
+          "photo": "/assets/people/annbjorg.png",
           "profile-url": "https://ous-research.no/home/bioinformatics/Group+members/22362",
           "affiliations": [],
           "elixir-groups": []
@@ -244,7 +244,7 @@
         {
           "name": "Sveinung Gundersen",
           "title": "Senior Engineer",
-          "photo": "/images/people/sveinung-gundersen.png",
+          "photo": "/assets/people/sveinung-gundersen.png",
           "profile-url": "https://www.mn.uio.no/ifi/english/people/adm/sveinugu/",
           "affiliations": [],
           "elixir-groups": []
@@ -252,7 +252,7 @@
         {
           "name": "Ksenia Khelik",
           "title": "PhD Student",
-          "photo": "/images/people/ksenia-khelik.png",
+          "photo": "/assets/people/ksenia-khelik.png",
           "profile-url": "https://no.linkedin.com/in/ksenia-khelik-b5068a63",
           "affiliations": [],
           "elixir-groups": []
@@ -260,7 +260,7 @@
         {
           "name": "Federico Bianchini",
           "title": "Senior Engineer",
-          "photo": "/images/people/federico-bianchini.png",
+          "photo": "/assets/people/federico-bianchini.png",
           "profile-url": "https://www.mn.uio.no/sbi/personer/fredebi/",
           "affiliations": [],
           "elixir-groups": []
@@ -268,7 +268,7 @@
         {
           "name": "Nazeefa Fatima",
           "title": "Principal Engineer",
-          "photo": "/images/people/nazeefa-fatima.png",
+          "photo": "/assets/people/nazeefa-fatima.png",
           "profile-url": "https://www.mn.uio.no/ifi/english/people/adm/nazeefaf/",
           "affiliations": [],
           "elixir-groups": []
@@ -276,7 +276,7 @@
         {
           "name": "Victor Kalbskopf",
           "title": "Senior engineer, PhD",
-          "photo": "/images/people/victor-kalbskopf.png",
+          "photo": "/assets/people/victor-kalbskopf.png",
           "profile-url": "https://ous-research.no/home/bioinformatics/Group%20members/22887",
           "affiliations": [],
           "elixir-groups": []
@@ -284,7 +284,7 @@
         {
           "name": "Pável Vázquez",
           "title": "Senior Engineer",
-          "photo": "/images/people/pavel-vazquez-faci.png",
+          "photo": "/assets/people/pavel-vazquez-faci.png",
           "profile-url": "https://no.linkedin.com/in/pavel-vazquez-71166211b",
           "affiliations": [],
           "elixir-groups": []
@@ -292,7 +292,7 @@
         {
           "name": "Fabian Bernal",
           "title": "Senior Engineer",
-          "photo": "/images/people/fabian-bernal.png",
+          "photo": "/assets/people/fabian-bernal.png",
           "profile-url": "https://www.usit.uio.no/om/organisasjon/ffu/fp/ansatte/flbernal/",
           "affiliations": [],
           "elixir-groups": []
@@ -300,7 +300,7 @@
         {
           "name": "Morten Mattingsdal",
           "title": "Researcher",
-          "photo": "/images/people/morten-mattingsdal.png",
+          "photo": "/assets/people/morten-mattingsdal.png",
           "profile-url": "https://www.mn.uio.no/ifi/personer/vit/mortema/",
           "affiliations": [],
           "elixir-groups": []
@@ -308,7 +308,7 @@
         {
           "name": "Jeanne Chèneby",
           "title": null,
-          "photo": "/images/people/empty.png",
+          "photo": "/assets/people/empty.png",
           "profile-url": "https://www.mn.uio.no/sbi/personer/jeannech/",
           "affiliations": [],
           "elixir-groups": []
@@ -316,7 +316,7 @@
         {
           "name": "Morten Johansen",
           "title": "Chief Engineer",
-          "photo": "/images/people/morten-johansen.png",
+          "photo": "/assets/people/morten-johansen.png",
           "profile-url": "https://www.uio.no/personer/fellesadm/ea/campusdrift/bygningsdrift/gaustad/morjoh/",
           "affiliations": [],
           "elixir-groups": []
@@ -329,7 +329,7 @@
         {
           "name": "Erik Hjerde",
           "title": "Professor, Head of Node",
-          "photo": "/images/people/erik-hjerde.png",
+          "photo": "/assets/people/erik-hjerde.png",
           "profile-url": "https://en.uit.no/ansatte/person?p_document_id=41977",
           "affiliations": [],
           "elixir-groups": [
@@ -342,7 +342,7 @@
         {
           "name": "Erin Calhoun",
           "title": "Researcher",
-          "photo": "/images/people/erin-calhoun.png",
+          "photo": "/assets/people/erin-calhoun.png",
           "profile-url": "https://en.uit.no/ansatte/erin.calhoun",
           "affiliations": [],
           "elixir-groups": [
@@ -355,7 +355,7 @@
         {
           "name": "Espen Åberg",
           "title": "Researcher",
-          "photo": "/images/people/espen-aaberg.png",
+          "photo": "/assets/people/espen-aaberg.png",
           "profile-url": "https://uit.no/ansatte/espen.aberg",
           "affiliations": [],
           "elixir-groups": [
@@ -368,7 +368,7 @@
         {
           "name": "Annette Bayer",
           "title": "Professor, Head—Department of Chemistry",
-          "photo": "/images/people/annette-bayer.png",
+          "photo": "/assets/people/annette-bayer.png",
           "profile-url": "https://en.uit.no/ansatte/person?p_document_id=41029",
           "affiliations": [],
           "elixir-groups": [
@@ -381,7 +381,7 @@
         {
           "name": "Terje Klemetsen",
           "title": "Chief Engineer",
-          "photo": "/images/people/terje-klemetsen.png",
+          "photo": "/assets/people/terje-klemetsen.png",
           "profile-url": "https://uit.no/ansatte/person?p_document_id=379069",
           "elixir-groups": [],
           "affiliations": []
@@ -389,7 +389,7 @@
         {
           "name": "Danilo Martins",
           "title": "Divisional Engineer",
-          "photo": "/images/people/danilo-martins.png",
+          "photo": "/assets/people/danilo-martins.png",
           "profile-url": "https://uit.no/ansatte/person?p_document_id=807698",
           "elixir-groups": [],
           "affiliations": []
@@ -397,7 +397,7 @@
         {
           "name": "Dorota Buczek",
           "title": "Postdoctoral Fellow, Researcher",
-          "photo": "/images/people/dorota-buczek.png",
+          "photo": "/assets/people/dorota-buczek.png",
           "profile-url": "https://uit.no/ansatte/person?p_document_id=668151",
           "elixir-groups": [],
           "affiliations": []
@@ -405,7 +405,7 @@
         {
           "name": "Joshua Baskaran",
           "title": "Senior Engineer",
-          "photo": "/images/people/joshua-baskaran.png",
+          "photo": "/assets/people/joshua-baskaran.png",
           "profile-url": "https://uit.no/ansatte/joshua.baskaran",
           "elixir-groups": [],
           "affiliations": []
@@ -413,7 +413,7 @@
         {
           "name": "Sebastian Petters",
           "title": "Senior Engineer",
-          "photo": "/images/people/sebastian-petters.png",
+          "photo": "/assets/people/sebastian-petters.png",
           "profile-url": "https://uit.no/ansatte/sebastian.petters",
           "elixir-groups": [],
           "affiliations": []
@@ -421,7 +421,7 @@
         {
           "name": "Bastiaan Ribbers",
           "title": "Senior Engineer",
-          "photo": "/images/people/bastiaan-ribbers.png",
+          "photo": "/assets/people/bastiaan-ribbers.png",
           "profile-url": "https://uit.no/ansatte/person?p_document_id=827208",
           "elixir-groups": [],
           "affiliations": []
@@ -429,7 +429,7 @@
         {
           "name": "Hans Christpher",
           "title": "Professor",
-          "photo": "/images/people/hans-christopher-bernstein.png",
+          "photo": "/assets/people/hans-christopher-bernstein.png",
           "profile-url": "https://en.uit.no/ansatte/person?p_document_id=569039",
           "elixir-groups": [],
           "affiliations": []
@@ -442,7 +442,7 @@
         {
           "name": "Pål Sætrom",
           "title": "Professor, Head of Node",
-          "photo": "/images/people/paal-saetrom.png",
+          "photo": "/assets/people/paal-saetrom.png",
           "profile-url": "https://www.ntnu.no/ansatte/pal.satrom",
           "affiliations": [],
           "elixir-groups": [
@@ -455,7 +455,7 @@
         {
           "name": "Magnus Steigedal",
           "title": "Head Department of Clinical and Molecular Medicine",
-          "photo": "/images/people/magnus-steigedal.png",
+          "photo": "/assets/people/magnus-steigedal.png",
           "profile-url": "https://www.ntnu.no/ansatte/magnus.steigedal",
           "affiliations": [],
           "elixir-groups": [
@@ -468,7 +468,7 @@
         {
           "name": "Trygve Brautaset",
           "title": "Professor",
-          "photo": "/images/people/trygve-brautaset.png",
+          "photo": "/assets/people/trygve-brautaset.png",
           "profile-url": "https://www.ntnu.no/ansatte/trygve.brautaset",
           "affiliations": [],
           "elixir-groups": [
@@ -481,7 +481,7 @@
         {
           "name": "Morten Beck Rye",
           "title": "Associate Professor",
-          "photo": "/images/people/morten-beck-rye.png",
+          "photo": "/assets/people/morten-beck-rye.png",
           "profile-url": "https://www.ntnu.no/ansatte/morten.rye",
           "elixir-groups": [],
           "affiliations": []
@@ -489,7 +489,7 @@
         {
           "name": "Eivind Almaas",
           "title": "Professor",
-          "photo": "/images/people/eivind-almaas.png",
+          "photo": "/assets/people/eivind-almaas.png",
           "profile-url": "https://www.ntnu.edu/employees/eivind.almaas",
           "elixir-groups": [],
           "affiliations": []
@@ -497,7 +497,7 @@
         {
           "name": "Kjetil Klepper",
           "title": "Chief Engineer",
-          "photo": "/images/people/kjetil-klepper.png",
+          "photo": "/assets/people/kjetil-klepper.png",
           "profile-url": "https://www.ntnu.no/ansatte/kjetil.klepper",
           "elixir-groups": [],
           "affiliations": []
@@ -505,7 +505,7 @@
         {
           "name": "Emil Karlsen",
           "title": "Researcher",
-          "photo": "/images/people/emil-karlsen.png",
+          "photo": "/assets/people/emil-karlsen.png",
           "profile-url": "https://www.ntnu.no/ansatte/emil.karlsen",
           "elixir-groups": [],
           "affiliations": []
@@ -513,7 +513,7 @@
         {
           "name": "Konika Chawla",
           "title": "Managing Director, BioCore",
-          "photo": "/images/people/konika-chawla.png",
+          "photo": "/assets/people/konika-chawla.png",
           "profile-url": "https://www.ntnu.no/ansatte/konika.chawla",
           "elixir-groups": [],
           "affiliations": []
@@ -521,7 +521,7 @@
         {
           "name": "Lene Christin Olsen",
           "title": "Researcher",
-          "photo": "/images/people/lene-christin-olsen.png",
+          "photo": "/assets/people/lene-christin-olsen.png",
           "profile-url": "https://www.ntnu.no/ansatte/lene.c.olsen",
           "elixir-groups": [],
           "affiliations": []
@@ -529,7 +529,7 @@
         {
           "name": "Vladimir Mironov",
           "title": "Chief Engineer",
-          "photo": "/images/people/vladimir-mironov.png",
+          "photo": "/assets/people/vladimir-mironov.png",
           "profile-url": "https://www.ntnu.no/ansatte/vladimir.mironov",
           "elixir-groups": [],
           "affiliations": []
@@ -537,7 +537,7 @@
         {
           "name": "Maximillian Wess",
           "title": "PhD Candidate",
-          "photo": "/images/people/maximillian-wess.png",
+          "photo": "/assets/people/maximillian-wess.png",
           "profile-url": "https://www.ntnu.edu/employees/maximilian.wess",
           "elixir-groups": [],
           "affiliations": []
@@ -550,7 +550,7 @@
         {
           "name": "Simen Rød Sandve",
           "title": "Professor",
-          "photo": "/images/people/simen-sandve.png",
+          "photo": "/assets/people/simen-sandve.png",
           "profile-url": "https://www.nmbu.no/om/ansatte/simen-rod-sandve",
           "affiliations": [],
           "elixir-groups": [
@@ -563,7 +563,7 @@
         {
           "name": "Kari Kolstad",
           "title": "Dean—Faculty of Biosciences",
-          "photo": "/images/people/kari-kolstad.png",
+          "photo": "/assets/people/kari-kolstad.png",
           "profile-url": "https://www.nmbu.no/om/ansatte/kari-kolstad",
           "affiliations": [],
           "elixir-groups": [
@@ -576,7 +576,7 @@
         {
           "name": "Helle Tessand Baalsrud",
           "title": "Postdoctoral Fellow",
-          "photo": "/images/people/helle-tessand-baalsrud.png",
+          "photo": "/assets/people/helle-tessand-baalsrud.png",
           "profile-url": "https://www.nmbu.no/om/ansatte/helle-tessand-baalsrud",
           "elixir-groups": [],
           "affiliations": []
@@ -584,7 +584,7 @@
         {
           "name": "Thu-Hien To",
           "title": "Researcher",
-          "photo": "/images/people/thu-hien-to.png",
+          "photo": "/assets/people/thu-hien-to.png",
           "profile-url": "https://www.nmbu.no/om/ansatte/thu-hien",
           "elixir-groups": [],
           "affiliations": []
@@ -592,7 +592,7 @@
         {
           "name": "Lars Grønvold",
           "title": "Researcher",
-          "photo": "/images/people/lars-gronvold.png",
+          "photo": "/assets/people/lars-gronvold.png",
           "profile-url": "https://www.nmbu.no/om/ansatte/lars-gronvold",
           "elixir-groups": [],
           "affiliations": []
@@ -600,7 +600,7 @@
         {
           "name": "Gareth Gillard",
           "title": "Researcher",
-          "photo": "/images/people/gareth-benjamin-gillard.png",
+          "photo": "/assets/people/gareth-benjamin-gillard.png",
           "profile-url": "https://www.nmbu.no/en/about/employees/gareth-benjamin-gillard",
           "elixir-groups": [],
           "affiliations": []
@@ -608,7 +608,7 @@
         {
           "name": "Arturo De Leon",
           "title": "Senior Engineer",
-          "photo": "/images/people/arturo-vera-ponce-de-leon.png",
+          "photo": "/assets/people/arturo-vera-ponce-de-leon.png",
           "profile-url": "https://www.nmbu.no/om/ansatte/arturo-vera-ponce-de-leon",
           "elixir-groups": [],
           "affiliations": []
@@ -616,7 +616,7 @@
         {
           "name": "Marius Strand",
           "title": "Researcher",
-          "photo": "/images/people/marius-andre-strand.png",
+          "photo": "/assets/people/marius-andre-strand.png",
           "profile-url": "https://www.nmbu.no/om/ansatte/marius-andre-strand",
           "elixir-groups": [],
           "affiliations": []
@@ -629,7 +629,7 @@
         {
           "name": "Fátima Al-Shahrour",
           "title": "Head—Department of Bioinformatics",
-          "photo": "/images/people/fatima-al-shahrour.png",
+          "photo": "/assets/people/fatima-al-shahrour.png",
           "profile-url": "https://www.cnio.es/en/personas/fatima-al-shahrour-2/",
           "affiliations": [],
           "elixir-groups": [
@@ -647,7 +647,7 @@
         {
           "name": "Jacques van Helden",
           "title": "Professor, Co-Head of Node ELIXIR France",
-          "photo": "/images/people/jacques-van-helden.png",
+          "photo": "/assets/people/jacques-van-helden.png",
           "profile-url": "https://www.researchgate.net/profile/Jacques-Van-Helden",
           "affiliations": [],
           "elixir-groups": [
@@ -665,7 +665,7 @@
         {
           "name": "Jaap Heringa",
           "title": "Professor, Head of Node ELIXIR Netherlands, Head—Department of Computer Science VU",
-          "photo": "/images/people/jaap-heringa.png",
+          "photo": "/assets/people/jaap-heringa.png",
           "profile-url": "https://www.cs.vu.nl/~heringa/",
           "affiliations": [],
           "elixir-groups": [
@@ -683,7 +683,7 @@
         {
           "name": "Anna Kreshuk",
           "title": "Group Leader",
-          "photo": "/images/people/anna-kreshuk.png",
+          "photo": "/assets/people/anna-kreshuk.png",
           "profile-url": "https://www.embl.org/people/person/anna-kreshuk/",
           "affiliations": [],
           "elixir-groups": [
@@ -701,7 +701,7 @@
         {
           "name": "Robert Lyle",
           "title": "Group Leader",
-          "photo": "/images/people/robert-lyle.png",
+          "photo": "/assets/people/robert-lyle.png",
           "profile-url": "https://www.sequencing.uio.no/about/people/robert-lyle.html",
           "affiliations": [],
           "elixir-groups": [
@@ -714,7 +714,7 @@
         {
           "name": "Hilde Loge Nilsen",
           "title": "Researcher",
-          "photo": "/images/people/hilde-loge-nilsen.png",
+          "photo": "/assets/people/hilde-loge-nilsen.png",
           "profile-url": "https://www.med.uio.no/klinmed/personer/vit/hildni/",
           "affiliations": [],
           "elixir-groups": [
@@ -732,7 +732,7 @@
         {
           "name": "Rolf Edvardsen",
           "title": "Researcher",
-          "photo": "/images/people/rolf-brudvik-edvardsen.png",
+          "photo": "/assets/people/rolf-brudvik-edvardsen.png",
           "profile-url": "https://www.hi.no/hi/om-oss/ansatte/rolf-brudvik-edvardsen",
           "affiliations": [],
           "elixir-groups": [
@@ -750,7 +750,7 @@
         {
           "name": "Eli Grindflek",
           "title": "R&D Manager",
-          "photo": "/images/people/eli-grindflek.png",
+          "photo": "/assets/people/eli-grindflek.png",
           "profile-url": "https://norsvin.no/kontakt-oss-2/",
           "affiliations": [],
           "elixir-groups": [

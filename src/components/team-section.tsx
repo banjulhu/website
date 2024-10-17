@@ -56,7 +56,7 @@ const Member = ({ name, title, organization, displayOrgLogo = true, photo, hideP
         <div
             className={`absolute w-12 p-0.5 ${resolveOrgCssShape()} bottom-2 right-2 overflow-hidden bg-white border-2 border-white`}>
             <img
-                src={`/images/logos/orgs/${resolveMemberOrgImageAsset()}`}
+                src={`/assets/logos/orgs/${resolveMemberOrgImageAsset()}`}
                 alt="Organization Logo"
                 className="w-full h-full object-contain"
             />
@@ -68,7 +68,7 @@ const Member = ({ name, title, organization, displayOrgLogo = true, photo, hideP
             {!hidePhoto && <div className="relative">
                 <img
                     className="w-full rounded-2xl aspect-[6/6] object-cover"
-                    src={photo ?? "/images/people/empty.png"}
+                    src={photo ?? "/assets/people/empty.png"}
                     alt={name}
                 />
                 {organization && displayOrgLogo ? MemberOrgLogo : null}

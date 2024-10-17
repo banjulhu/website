@@ -24,7 +24,7 @@ const news = await getCollection('news');
             return (
                     <li class="shadow-xl bg-light-surface dark:bg-dark-surface rounded-lg overflow-clip">
                         <div class="h-48 bg-white overflow-clip flex items-center justify-center">
-                            <img src={entry.data?.cover?.source ?? "/images/og/default.jpg"}
+                            <img src={entry.data?.cover?.source ?? "/assets/og/default.jpg"}
                                  alt="Article Cover"
                                  class="w-auto h-auto"/>
                         </div>
