@@ -14,8 +14,14 @@ function parseDate(dateString) {
     return parsedDate;
 }
 
+function truncateStringToLength(string, length) {
+    return (string.length > length)
+        ? `${string.substring(0, length).trim()}...`
+        : string
+}
+
 const news = await getCollection('news');
-// news.sort((a, b) => parseDate(b.data.date) - parseDate(a.data.date));
+news.sort((a, b) => parseDate(b.data.date) - parseDate(a.data.date));
 ---
 
 <FullWidthLayout title="News">
@@ -31,7 +37,8 @@ const news = await getCollection('news');
                         <a href={`/news/${entry.slug}`} class="flex px-6 pt-4 pb-6 flex-col gap-y-2">
                             <time class="block font-light text-orange-600">{entry.data.date}</time>
                             <span class="block text-xl font-bold">{entry.data.title}</span>
-                            {entry.data.summary && <span class="block text-sm font-light">{entry.data.summary}</span>}
+                            {entry.data.summary &&
+                                    <span class="block text-sm font-light">{truncateStringToLength(entry.data.summary, 120)}</span>}
                         </a>
                     </li>
             )

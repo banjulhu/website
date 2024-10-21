@@ -27,24 +27,30 @@ export const Navigation = ({ pathname }) => {
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [open, setOpen] = useState(false);
-    const [sections, setSections] = useState([]);
+
+    // If context menu is needed.
+    // const [sections, setSections] = useState([]);
+    // <ContextualHeader sections={sections}/>
+    // useEffect(() => {
+    //     const ref = navigation.find(x => x.href === pathname);
+    //     if (ref && ref.sections) {
+    //         setSections(ref.sections)
+    //     }
+    // }, [pathname]);
 
     useEffect(() => {
-        const ref = navigation.find(x => x.href === pathname);
-        if (ref && ref.sections) {
-            setSections(ref.sections)
-        }
-    }, [pathname]);
+        console.log(pathname);
+    }, [ pathname])
 
     const onSearchClick = () => {
         setOpen(true);
-    }
+    };
 
     return (
         <Fragment>
-            <header className="relative inset-x-0 top-0 z-50">
+            <header className="relative inset-x-0 top-0 z-50 ">
                 <nav aria-label="Global"
-                     className="sticky top-0 z-50 flex items-center justify-between pb-6 px-6 pt-6 lg:pb-0 lg:px-8">
+                     className="sticky max-w-7xl top-0 z-50 flex items-center justify-between pb-6 px-6 pt-6 lg:pb-0 lg:px- mx-auto">
                     <CommandPalette {...{ open, setOpen }} />
                     <div className="flex lg:flex-1">
                         <a href="/" className="-m-1.5 p-1.5">
@@ -75,7 +81,7 @@ export const Navigation = ({ pathname }) => {
                         {navigation.map((item) => (
                             <a key={item.name}
                                href={item.href}
-                               className={`navlink text-base font-semibold leading-6 ${pathname === item.href ? "text-orange-600" : ""}`}>
+                               className={`hover:text-brand-primary/75 text-base font-semibold leading-6 ${pathname === item.href ? "text-brand-primary" : "text-slate-950 dark:text-slate-50"}`}>
                                 {item.name}
                             </a>
                         ))}
@@ -140,13 +146,12 @@ export const Navigation = ({ pathname }) => {
                     </DialogPanel>
                 </Dialog>
             </header>
-            {/*<ContextualHeader sections={sections}/>*/}
         </Fragment>
     );
 
 };
 
-const ContextualHeader = ({ sections }) => {
+export const ContextualHeader = ({ sections }) => {
     return (
         <nav
             className={`sticky top-0 z-40 bg-white dark:bg-basic-black shadow-lg animate__animated animate__fadeInDown ${sections?.length > 0 ? "" : "hidden"}`}>
@@ -169,5 +174,3 @@ const ContextualHeader = ({ sections }) => {
 };
 
 export default Navigation;
-
-

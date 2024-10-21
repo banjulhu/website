@@ -27,6 +27,15 @@ import { components } from "../components/elements";
             document.documentElement.classList.add('dark');
         }
     </script>
+    <script is:inline>
+        let pagefind;
+        document.querySelector("#search").addEventListener("focus", async (e) => {
+            if (!pagefind) {
+                pagefind = await import("/pagefind/pagefind.js");
+                pagefind.init();
+            }
+        })
+    </script>
 </head>
 <body class="relative min-h-full">
     <Banner>
