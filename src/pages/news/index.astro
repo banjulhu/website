@@ -4,14 +4,14 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import FullWidthLayout from "../../layouts/full-width.astro";
 
 // Function to normalize the date
-function parseDate(dateString) {
+function parseDate(dateString: string): number {
     // Try to create a date using the Date constructor
     const parsedDate = new Date(Date.parse(dateString));
-    // If the date is invalid, return a default date
-    if (isNaN(parsedDate as any)) {
-        return new Date(0); // This would be used for totally unparseable dates
+    // If the date is invalid, return a default timestamp (0 represents the epoch)
+    if (isNaN(parsedDate.getTime())) {
+        return new Date(0).getTime(); // Return the default date's timestamp
     }
-    return parsedDate;
+    return parsedDate.getTime(); // Return the timestamp of the parsed date
 }
 
 function truncateStringToLength(string, length) {
