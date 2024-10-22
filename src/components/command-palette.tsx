@@ -7,9 +7,9 @@ import {
     DialogBackdrop,
     DialogPanel,
 } from '@headlessui/react'
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { ExclamationCircleIcon, PencilSquareIcon, } from '@heroicons/react/24/outline'
-import { useEffect, useState } from 'react'
+import {MagnifyingGlassIcon} from '@heroicons/react/20/solid'
+import {ExclamationCircleIcon, PencilSquareIcon,} from '@heroicons/react/24/outline'
+import {useEffect, useState} from 'react'
 
 const items = [
     {
@@ -26,24 +26,40 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function CommandPalette({ open, setOpen }) {
+export default function CommandPalette({open, setOpen}) {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
-    const [pagefind, setPagefind] = useState(null);
+    const [pageFind, setPageFind] = useState<any>();
 
     useEffect(() => {
-        // Load the Pagefind script
-        const loadPagefind = async () => {
-            const module = await import('../pages/pagefind/pagefind.js');
-            setPagefind(module);
-        };
-        loadPagefind();
+        (async () => {
+            setPageFind(await import("/pagefind/pagefind.js?url"));
+            if (!pageFind) return;
+            await pageFind.options({
+                ranking: {
+                    // Decreasing the pageLength parameter is a
+                    // good way to suppress very short pages that
+                    // are undesirably ranking higher than
+                    // longer pages. (max: 1, min: 0)
+                    pageLength: 0.5,
+                },
+            });
+            pageFind.init();
+        })();
     }, []);
 
     const handleSearch = async (e) => {
         const term = e.target.value;
-        setSearchTerm(term);
+
+        const results = await (await pageFind.search(e.target.value)).results;
+        console.log(results.length)
+        for (const result of results) {
+            const data = await result.data();
+            console.log(data, data.meta.title, data.excerpt);
+            // do required DOM manipulation
+        }
+        /*setSearchTerm(term);
 
         if (pagefind && term) {
             const search = await pagefind.search(term);
@@ -55,7 +71,7 @@ export default function CommandPalette({ open, setOpen }) {
             setResults(searchResults);
         } else {
             setResults([]);
-        }
+        }*/
     };
 
 

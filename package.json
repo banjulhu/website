@@ -9,6 +9,7 @@
     "build:astro": "astro check && astro build",
     "build:pagefind": "npx pagefind",
     "build": "npm-run-all -s build:astro copy:pagefind:dev build:pagefind",
+    "dev:build": "npm-run-all -s build dev",
     "preview": "astro preview",
     "astro": "astro",
     "postbuild": "pagefind --site dist"

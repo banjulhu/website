@@ -21,5 +21,10 @@ export default defineConfig({
         css: {
             transformer: "sass",
         },
+        build: {
+            rollupOptions: {
+                external: '/pagefind/pagefind.js?url'
+            }
+        }
     },
 });
