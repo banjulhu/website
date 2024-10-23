@@ -7,29 +7,16 @@ import {
     DialogBackdrop,
     DialogPanel,
 } from '@headlessui/react'
-import {MagnifyingGlassIcon} from '@heroicons/react/20/solid'
-import {ExclamationCircleIcon, PencilSquareIcon,} from '@heroicons/react/24/outline'
-import {useEffect, useState} from 'react'
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { ExclamationCircleIcon, } from '@heroicons/react/24/outline'
+import { useEffect, useState } from 'react';
+import debounce from "lodash/debounce";
+import DomPurify from "dompurify";
 
-const items = [
-    {
-        id: 1,
-        name: 'Text',
-        description: 'Add freeform text with basic formatting options.',
-        url: '#',
-        color: 'bg-indigo-500',
-        icon: PencilSquareIcon,
-    },
-]
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
-
-export default function CommandPalette({open, setOpen}) {
+export default function CommandPalette({ open, setOpen }) {
 
     const [searchTerm, setSearchTerm] = useState('');
-    const [results, setResults] = useState([]);
+    const [filteredItems, setFilteredItems] = useState([]);
     const [pageFind, setPageFind] = useState<any>();
 
     useEffect(() => {
@@ -44,6 +31,12 @@ export default function CommandPalette({open, setOpen}) {
                     // longer pages. (max: 1, min: 0)
                     pageLength: 0.5,
                 },
+                filters: {
+                    exclude: [
+                        "/news/index",
+                        "/banner"
+                    ]
+                }
             });
             pageFind.init();
         })();
@@ -51,36 +44,19 @@ export default function CommandPalette({open, setOpen}) {
 
     const handleSearch = async (e) => {
         const term = e.target.value;
-
-        const results = await (await pageFind.search(e.target.value)).results;
-        console.log(results.length)
+        const results = await (await pageFind.search(term)).results;
+        const res = [];
         for (const result of results) {
             const data = await result.data();
-            console.log(data, data.meta.title, data.excerpt);
-            // do required DOM manipulation
-        }
-        /*setSearchTerm(term);
-
-        if (pagefind && term) {
-            const search = await pagefind.search(term);
-            const searchResults = await Promise.all(
-                search.results.map(async (result) => {
-                    return await result.data();
-                })
-            );
-            setResults(searchResults);
-        } else {
-            setResults([]);
-        }*/
-    };
-
-
-    const filteredItems =
-        searchTerm === ''
-            ? []
-            : items.filter((item) => {
-                return item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            res.push({
+                url: data.url,
+                title: data.meta?.title,
+                image: data.meta?.image,
+                excerpt: data.excerpt
             })
+        }
+        setFilteredItems([...res.filter((r) => !/^\/news\/?$/.test(r.url))])
+    };
 
     return (
         <Dialog
@@ -101,9 +77,9 @@ export default function CommandPalette({open, setOpen}) {
                     className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                     <Combobox
-                        onChange={(item: any) => {
-                            if (item) {
-                                window.location = item.url
+                        onChange={(url: any) => {
+                            if (url) {
+                                window.location = url
                             }
                         }}
                     >
@@ -116,29 +92,24 @@ export default function CommandPalette({open, setOpen}) {
                                 autoFocus
                                 className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                                 placeholder="Search..."
-                                onChange={handleSearch}
+                                onChange={debounce(handleSearch, 500)}
                                 onBlur={() => setSearchTerm('')}
                             />
                         </div>
                         {filteredItems.length > 0 && (
                             <ComboboxOptions static className="max-h-96 transform-gpu scroll-py-3 overflow-y-auto p-3">
-                                {filteredItems.map((item) => (
+                                {filteredItems.map((item, index) => (
                                     <ComboboxOption
-                                        key={item.id}
-                                        value={item}
+                                        key={`search-result-${index}`}
+                                        value={item.url}
                                         className="group flex cursor-default select-none rounded-xl p-3 data-[focus]:bg-gray-100"
                                     >
-                                        <div
-                                            className={classNames(
-                                                'flex h-10 w-10 flex-none items-center justify-center rounded-lg',
-                                                item.color,
-                                            )}
-                                        >
-                                            <item.icon className="h-6 w-6 text-white" aria-hidden="true"/>
-                                        </div>
                                         <div className="ml-4 flex-auto">
-                                            <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">{item.name}</p>
-                                            <p className="text-sm text-gray-500 group-data-[focus]:text-gray-700">{item.description}</p>
+                                            <p className="text-base font-medium text-gray-700 group-data-[focus]:text-gray-900">{item.title}</p>
+                                            <p className="text-sm mt-1 text-gray-500 group-data-[focus]:text-gray-700"
+                                               dangerouslySetInnerHTML={{
+                                                   __html: DomPurify.sanitize(item.excerpt)
+                                               }}/>
                                         </div>
                                     </ComboboxOption>
                                 ))}
@@ -151,10 +122,10 @@ export default function CommandPalette({open, setOpen}) {
                                     name="exclamation-circle"
                                     className="mx-auto h-6 w-6 text-gray-400"
                                 />
-                                {results}
                                 <p className="mt-4 font-semibold text-gray-900">No results found</p>
-                                <p className="mt-2 text-gray-500">No components found for this search term. Please try
-                                    again.</p>
+                                <p className="mt-2 text-gray-500">
+                                    No results found for this search term. Please try again.
+                                </p>
                             </div>
                         )}
                     </Combobox>
@@ -162,4 +133,5 @@ export default function CommandPalette({open, setOpen}) {
             </div>
         </Dialog>
     )
+
 }
