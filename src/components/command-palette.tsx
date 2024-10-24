@@ -92,7 +92,7 @@ export default function CommandPalette({ open, setOpen }) {
                                 autoFocus
                                 className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                                 placeholder="Search..."
-                                onChange={debounce(handleSearch, 500)}
+                                onChange={debounce(handleSearch, 200)}
                                 onBlur={() => setSearchTerm('')}
                             />
                         </div>
