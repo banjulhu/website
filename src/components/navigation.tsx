@@ -58,12 +58,12 @@ export const Navigation = ({ pathname }) => {
                             <img
                                 alt="ELIXIR.NO Logo"
                                 src="/assets/logos/elixir-no-light.svg"
-                                className="hidden dark:block h-16 w-auto"
+                                className="hidden dark:block h-20 w-auto"
                             />
                             <img
                                 alt="ELIXIR.NO Logo"
                                 src="/assets/logos/elixir-no-dark.svg"
-                                className="block dark:hidden h-16 w-auto"
+                                className="block dark:hidden h-20 w-auto"
                             />
                         </a>
                     </div>

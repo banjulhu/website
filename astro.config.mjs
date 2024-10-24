@@ -3,7 +3,7 @@ import {rehypeHeadingIds} from '@astrojs/markdown-remark';
 import react from '@astrojs/react';
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
-
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,15 +11,15 @@ export default defineConfig({
     integrations: [
         mdx({
             rehypePlugins: [
-                rehypeHeadingIds,
-            ],
+                rehypeHeadingIds
+            ]
         }),
         react(),
         tailwind()
     ],
     vite: {
         css: {
-            transformer: "sass",
+            transformer: "sass"
         },
         build: {
             rollupOptions: {
@@ -27,4 +27,10 @@ export default defineConfig({
             }
         }
     },
+    output: "hybrid",
+    adapter: cloudflare({
+        platformProxy: {
+            enabled: true,
+        },
+    })
 });
