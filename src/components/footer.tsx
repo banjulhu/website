@@ -62,16 +62,25 @@ const ElixirBrand = () => {
 };
 
 const ElixirOrgs = () => {
+
+    const orgs = [
+        ["https://uib.no/", "/assets/logos/orgs/uib.svg", "UiB logo"],
+        ["https://uio.no/", "/assets/logos/orgs/uio.svg", "UiO logo"],
+        ["https://uit.no/", "/assets/logos/orgs/uit.svg", "UiT logo"],
+        ["https://ntnu.no/", "/assets/logos/orgs/ntnu.svg", "NTNU logo"],
+        ["https://nmbu.no/", "/assets/logos/orgs/nmbu.svg", "NMBU logo"],
+    ];
+
+    const funders = [
+        ["https://forskningsradet.no/", "/assets/logos/orgs/nfr.svg", "Research Council of Norway logo"],
+        ["https://www.nordforsk.org", "/assets/logos/orgs/nordforsk.svg", "Nordforsk logo"],
+        ["https://research-and-innovation.ec.europa.eu/", "/assets/logos/orgs/eu.svg", "EU co-funded logo"],
+    ];
+
     return (
         <div className="col-span-full lg:col-span-2 flex flex-col justify-between gap-y-6">
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 lg:gap-x-4 mx-auto">
-                {[
-                    ["https://uib.no/", "/assets/logos/orgs/uib.svg", "UiB logo"],
-                    ["https://uio.no/", "/assets/logos/orgs/uio.svg", "UiO logo"],
-                    ["https://uit.no/", "/assets/logos/orgs/uit.svg", "UiT logo"],
-                    ["https://ntnu.no/", "/assets/logos/orgs/ntnu.svg", "NTNU logo"],
-                    ["https://nmbu.no/", "/assets/logos/orgs/nmbu.svg", "NMBU logo"],
-                ].map(([href, imageUrl, alt]) => {
+                {orgs.map(([href, imageUrl, alt]) => {
                     return (
                         <a href={href} target="_blank">
                             <img
@@ -84,11 +93,7 @@ const ElixirOrgs = () => {
                 })}
             </div>
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:gap-x-4 mx-auto">
-                {[
-                    ["https://forskningsradet.no/", "/assets/logos/orgs/nfr.svg", "Research Council of Norway logo"],
-                    ["https://www.nordforsk.org", "/assets/logos/orgs/nordforsk.svg", "Nordforsk logo"],
-                    ["https://research-and-innovation.ec.europa.eu/", "/assets/logos/orgs/eu.svg", "EU co-funded logo"],
-                ].map(([href, imageUrl, alt]) => {
+                {funders.map(([href, imageUrl, alt]) => {
                     return (
                         <a href={href} target="_blank">
                             <img
@@ -101,9 +106,9 @@ const ElixirOrgs = () => {
                 })}
             </div>
             <p className="text-sm text-pretty text-center lg:max-w-2xl m-auto flex-1">
-                Financed by the Research Council of Norway’s grants 208481, 270068, 295932, 
+                Financed by the Research Council of Norway’s grants 208481, 270068, 295932,
                 the University of Bergen, the University of Oslo, the Arctic University
-                of Norway in Tromsø, the Norwegian University of Science and Technology, 
+                of Norway in Tromsø, the Norwegian University of Science and Technology,
                 the Norwegian University of Life Sciences: NMBU, Nordforsk and co-funded by the European Union.
             </p>
         </div>
@@ -112,7 +117,8 @@ const ElixirOrgs = () => {
 
 const Links = () => {
     return (
-        <div className="col-span-full lg:col-span-1 text-right place-content-end place-items-end place-self-center lg:place-self-end">
+        <div
+            className="col-span-full lg:col-span-1 text-right place-content-end place-items-end place-self-center lg:place-self-end">
             <div role="list" className="flex sm:flex-row lg:flex-col gap-y-2 gap-x-2">
                 <a href="#" className="text-sm leading-6">Helpdesk</a>
                 <a href="#" className="text-sm leading-6">Careers</a>

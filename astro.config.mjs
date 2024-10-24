@@ -3,7 +3,7 @@ import {rehypeHeadingIds} from '@astrojs/markdown-remark';
 import react from '@astrojs/react';
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
-import cloudflare from "@astrojs/cloudflare";
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,17 +20,8 @@ export default defineConfig({
     vite: {
         css: {
             transformer: "sass"
-        },
-        build: {
-            rollupOptions: {
-                external: '/pagefind/pagefind.js?url'
-            }
         }
     },
     output: "hybrid",
-    adapter: cloudflare({
-        platformProxy: {
-            enabled: true,
-        },
-    })
+    adapter: cloudflare(),
 });

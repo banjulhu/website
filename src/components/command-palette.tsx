@@ -9,80 +9,60 @@ import {
 } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { ExclamationCircleIcon, } from '@heroicons/react/24/outline'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import debounce from "lodash/debounce";
 import DomPurify from "dompurify";
+
+const ignoredPaths = /^\/news\/?$/;
+const debounceTime = 200;
 
 export default function CommandPalette({ open, setOpen }) {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState([]);
-    const [pageFind, setPageFind] = useState<any>();
-
-    useEffect(() => {
-        (async () => {
-            setPageFind(await import("/pagefind/pagefind.js?url"));
-            if (!pageFind) return;
-            await pageFind.options({
-                ranking: {
-                    // Decreasing the pageLength parameter is a
-                    // good way to suppress very short pages that
-                    // are undesirably ranking higher than
-                    // longer pages. (max: 1, min: 0)
-                    pageLength: 0.5,
-                },
-                filters: {
-                    exclude: [
-                        "/news/index",
-                        "/banner"
-                    ]
-                }
-            });
-            pageFind.init();
-        })();
-    }, []);
 
     const handleSearch = async (e) => {
-        const term = e.target.value;
-        const results = await (await pageFind.search(term)).results;
-        const res = [];
-        for (const result of results) {
-            const data = await result.data();
-            res.push({
-                url: data.url,
-                title: data.meta?.title,
-                image: data.meta?.image,
-                excerpt: data.excerpt
-            })
+        if (window?.pagefind) {
+            const term = e.target.value;
+            const results = await (await window?.pagefind.search(term)).results;
+            const res = [];
+            for (const result of results) {
+                const data = await result.data();
+                res.push({
+                    url: data.url,
+                    title: data.meta?.title,
+                    image: data.meta?.image,
+                    excerpt: data.excerpt
+                })
+            }
+            setFilteredItems([...res.filter((r) => !ignoredPaths.test(r.url))])
         }
-        setFilteredItems([...res.filter((r) => !/^\/news\/?$/.test(r.url))])
     };
+
+    const onCommandPaletteClose = () => {
+        setOpen(false);
+        setSearchTerm('');
+    };
+
+    const onItemSelected = (url: Location) => {
+        if (url) {
+            window.location = url
+        }
+    }
 
     return (
         <Dialog
             className="isolate relative z-[999]"
             open={open}
-            onClose={() => {
-                setOpen(false)
-                setSearchTerm('')
-            }}
-        >
+            onClose={onCommandPaletteClose}>
             <DialogBackdrop
                 transition
-                className="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
-            />
+                className="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"/>
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto p-4 sm:p-6 md:p-20">
                 <DialogPanel
                     transition
-                    className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
-                >
-                    <Combobox
-                        onChange={(url: any) => {
-                            if (url) {
-                                window.location = url
-                            }
-                        }}
-                    >
+                    className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in">
+                    <Combobox onChange={onItemSelected}>
                         <div className="relative">
                             <MagnifyingGlassIcon
                                 className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400"
@@ -92,7 +72,7 @@ export default function CommandPalette({ open, setOpen }) {
                                 autoFocus
                                 className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                                 placeholder="Search..."
-                                onChange={debounce(handleSearch, 200)}
+                                onChange={debounce(handleSearch, debounceTime)}
                                 onBlur={() => setSearchTerm('')}
                             />
                         </div>
@@ -132,6 +112,6 @@ export default function CommandPalette({ open, setOpen }) {
                 </DialogPanel>
             </div>
         </Dialog>
-    )
+    );
 
 }

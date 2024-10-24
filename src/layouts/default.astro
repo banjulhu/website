@@ -7,8 +7,6 @@ import BannerPrimaryContent from "../content/banner/primary.mdx";
 
 import "../styles/global.scss";
 import { components } from "../components/elements";
-
-
 ---
 
 <html lang="en" class="bg-white dark:bg-dark-background">
@@ -17,6 +15,19 @@ import { components } from "../components/elements";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content={Astro.generator}/>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <script is:inline>
+        (async () => {
+            try {
+                window.pagefind = await import('/pagefind/pagefind.js');
+                await window.pagefind.options({
+                    ranking: { pageLength: .35 }
+                });
+                window.pagefind.init();
+            } catch (error) {
+                console.error("Failed to load Pagefind:", error);
+            }
+        })();
+    </script>
     <title>ELIXIR Norway</title>
     <script is:inline>
         const theme = localStorage.getItem("theme") || "light";
@@ -29,15 +40,15 @@ import { components } from "../components/elements";
     </script>
 </head>
 <body class="relative min-h-full">
-    <Banner>
-        <Fragment>
-            <BannerPrimaryContent components={components}/>
-        </Fragment>
-    </Banner>
-    <Navigation client:load pathname={Astro.url.pathname}/>
-    <div class="isolate px-6 sm:px-8 pb-12 pt-16">
-        <slot/>
-    </div>
-    <Footer/>
+<Banner>
+    <Fragment>
+        <BannerPrimaryContent components={components}/>
+    </Fragment>
+</Banner>
+<Navigation client:load pathname={Astro.url.pathname}/>
+<div class="isolate px-6 sm:px-8 pb-12 pt-16">
+    <slot/>
+</div>
+<Footer/>
 </body>
 </html>

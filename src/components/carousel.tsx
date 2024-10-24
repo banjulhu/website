@@ -39,7 +39,6 @@ const Carousel = ({ images, autoSlideInterval = 3000 }) => {
     // Handle mouse gestures
     const handleMouseDown = (e) => {
         const startX = e.pageX;
-
         const handleMouseUp = (upEvent) => {
             const endX = upEvent.pageX;
             if (startX > endX + 50) {
@@ -49,7 +48,6 @@ const Carousel = ({ images, autoSlideInterval = 3000 }) => {
             }
             window.removeEventListener('mouseup', handleMouseUp);
         };
-
         window.addEventListener('mouseup', handleMouseUp);
     };
 
@@ -72,8 +70,7 @@ const Carousel = ({ images, autoSlideInterval = 3000 }) => {
         <div
             className="relative w-full max-w-5xl mx-auto group"
             onMouseDown={handleMouseDown}
-            onTouchStart={handleTouchStart}
-        >
+            onTouchStart={handleTouchStart}>
             <div className="overflow-hidden rounded-lg shadow-lg relative">
                 <div className="relative h-80 sm:h-80 md:h-96">
                     {images.map((image, index) => (
@@ -92,12 +89,12 @@ const Carousel = ({ images, autoSlideInterval = 3000 }) => {
                             <img
                                 src={image.src}
                                 alt={image.alt}
-                                className="w-full h-full object-cover cursor-pointer"
+                                className="w-full h-full object-cover cursor-pointer aspect-auto"
                                 onClick={handleImageClick}
                             />
                             {image.caption && (
                                 <div
-                                    className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-sm p-2">
+                                    className="absolute bottom-0 left-0 w-full bg-black bg-opacity-75 text-white text-sm p-2">
                                     {image.caption}
                                 </div>
                             )}
@@ -109,27 +106,27 @@ const Carousel = ({ images, autoSlideInterval = 3000 }) => {
                 className="absolute inset-0 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <button
                     onClick={prevSlide}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 group-hover:bg-opacity-75 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-black bg-opacity-50 group-hover:bg-opacity-75 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary"
                     aria-label="Previous slide"
                 >
                     <IoIosArrowBack className="h-6 w-6"/>
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 group-hover:bg-opacity-75 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-black bg-opacity-50 group-hover:bg-opacity-75 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary"
                     aria-label="Next slide"
                 >
                     <IoIosArrowForward className="h-6 w-6"/>
                 </button>
             </div>
             <div
-                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 group-hover:opacity-100 transition-opacity opacity-20">
                 {images.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => setCurrentIndex(index)}
                         className={`w-3 h-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
-                            index === currentIndex ? 'bg-indigo-500' : 'bg-gray-300'
+                            index === currentIndex ? 'bg-brand-primary' : 'bg-gray-300'
                         }`}
                         aria-label={`Go to slide ${index + 1}`}
                     />
