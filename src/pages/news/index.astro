@@ -1,6 +1,5 @@
 ---
-import Navigation from "../../components/navigation";
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getCollection } from 'astro:content';
 import FullWidthLayout from "../../layouts/full-width.astro";
 
 // Function to normalize the date
@@ -14,7 +13,7 @@ function parseDate(dateString: string): number {
     return parsedDate.getTime(); // Return the timestamp of the parsed date
 }
 
-function truncateStringToLength(string, length) {
+function truncateStringToLength(string: string, length: number) {
     return (string.length > length)
         ? `${string.substring(0, length).trim()}...`
         : string

@@ -6,14 +6,6 @@ export type Tag = {
     label: string;
 };
 
-// hover:bg-gray-200 dark:hover:bg-gray-600
-// hover:checked:bg-none hover:text-gray-500
-// dark:hover:text-gray-300
-// has-[:checked]:dark:hover:bg-none
-// has-[:checked]:bg-brand-primary
-// has-[:checked]:text-white
-// has-[:checked]:border-orange-700
-
 export default function TagsFilter({ name, tags = [] }: { name: string; tags: Tag[] }) {
 
     const [selectedTags, setSelectedTags] = useState<(number | string)[]>([]);
@@ -80,7 +72,6 @@ export default function TagsFilter({ name, tags = [] }: { name: string; tags: Ta
                     </div>
                 );
             })}
-            {/*<pre>{JSON.stringify({ selectedTags, tags }, null, 2)}</pre>*/}
         </form>
     );
 }
