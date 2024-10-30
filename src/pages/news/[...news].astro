@@ -1,12 +1,8 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getCollection } from 'astro:content';
 import { components } from "../../components/elements";
-import SidebarMenu from "../../components/sidebar-menu";
 import ComplexLayout from "../../layouts/complex.astro";
-import LeftSidebar from "../../content/training/_left.mdx";
-import RightSidebar from "../../content/training/_right.mdx";
-import { Debug } from "astro/components";
-import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6"
+// import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6"
 
 export async function getStaticPaths() {
     const news = await getCollection('news');
@@ -28,7 +24,7 @@ export async function getStaticPaths() {
     });
 }
 
-const { entry, previousArticle, nextArticle } = Astro.props;
+const { entry } = Astro.props;
 const { Content: MarkdownContent } = await entry.render();
 ---
 <ComplexLayout {...entry.data} sidebar="equal">
