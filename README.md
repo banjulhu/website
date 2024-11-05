@@ -67,6 +67,8 @@ This will start a local server, and you can view the project by going to http://
 
 ## Contributing
 
+> For minor changes and edits, please refer to the wiki guide available at [https://github.com/ELIXIR-NO/website/wiki](https://github.com/ELIXIR-NO/website/wiki).
+
 Clone the repository as shown above.
 
 Create a new branch for your changes:
