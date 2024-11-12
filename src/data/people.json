@@ -710,8 +710,9 @@
               "role": null
             }
           ]
-        },
-        
+        }
+      ]
+    },
     "hi": {
       "name": "Institute of Marine Research",
       "people": [
@@ -725,11 +726,6 @@
             {
               "name": "stakeholder-panel",
               "role": null
-            }
-          ]
-        }
-      ]
-    
             }
           ]
         }
