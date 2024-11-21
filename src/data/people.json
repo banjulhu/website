@@ -711,19 +711,6 @@
               "role": null
             }
           ]
-        },
-        {
-          "name": "Hilde Loge Nilsen",
-          "title": "Researcher",
-          "photo": "/assets/people/hilde-loge-nilsen.png",
-          "profile-url": "https://www.med.uio.no/klinmed/personer/vit/hildni/",
-          "affiliations": [],
-          "elixir-groups": [
-            {
-              "name": "stakeholder-panel",
-              "role": null
-            }
-          ]
         }
       ]
     },
@@ -735,24 +722,6 @@
           "title": "Researcher",
           "photo": "/assets/people/rolf-brudvik-edvardsen.png",
           "profile-url": "https://www.hi.no/hi/om-oss/ansatte/rolf-brudvik-edvardsen",
-          "affiliations": [],
-          "elixir-groups": [
-            {
-              "name": "stakeholder-panel",
-              "role": null
-            }
-          ]
-        }
-      ]
-    },
-    "norsvin": {
-      "name": "Topigs Norsvin",
-      "people": [
-        {
-          "name": "Eli Grindflek",
-          "title": "R&D Manager",
-          "photo": "/assets/people/eli-grindflek.png",
-          "profile-url": "https://norsvin.no/kontakt-oss-2/",
           "affiliations": [],
           "elixir-groups": [
             {
