@@ -163,20 +163,21 @@
           "elixir-groups": []
         },
         {
-          "name": "Sandra Kyrkjebø",
-          "title": "Higher Executive Officer",
-          "photo": "/assets/people/sandra-kyrkjebo.png",
-          "profile-url": "https://no.linkedin.com/in/sandra-kyrkjeb%C3%B8-4b5b611b7",
-          "affiliations": [],
-          "elixir-groups": []
-        },
-        {
           "name": "Yasin Miran",
           "title": "Senior Engineer",
           "photo": "/assets/people/yasin.png",
           "profile-url": "https://www4.uib.no/en/find-employees/Yasin.Tharak.Miran",
           "affiliations": [],
           "elixir-groups": []
+        },
+        {
+          "name": "Michael Dondrup",
+          "title": "Researcher",
+          "photo": "/assets/people/Michael.png",
+          "profile-url": "https://www4.uib.no/en/find-employees/Michael.Dondrup",
+          "affiliations": [],
+          "elixir-groups": [
+          ]
         }
       ]
     },
