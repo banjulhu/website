@@ -566,7 +566,7 @@
           "photo": "/assets/people/Gro-Steine.png",
           "profile-url": "https://www.nmbu.no/om/ansatte/Gro-Steine",
           "affiliations": [],
-          "elixir-groups": []
+          "elixir-groups": [
             {
               "name": "steering-board",
               "role": null
