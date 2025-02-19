@@ -4,6 +4,7 @@ import { HiArrowSmRight } from "react-icons/hi";
 const news = (await getCollection("news"))
     .sort((a, b) => new Date(b.data.date) - new Date(a.data.date)) // Sort by date (newest first)
     .splice(0, 3);
+
 ---
 
 <ul class="flex flex-col gap-y-4">
