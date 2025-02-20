@@ -190,12 +190,7 @@
           "photo": "/assets/people/eivind-hovig.png",
           "profile-url": "https://www.mn.uio.no/ifi/english/people/aca/ehovig/",
           "affiliations": [],
-          "elixir-groups": [
-            {
-              "name": "node-leaders",
-              "role": null
-            }
-          ]
+          "elixir-groups": []
         },
         {
           "name": "Roger Simm",
@@ -216,7 +211,12 @@
           "photo": "/assets/people/rein-aasland.png",
           "profile-url": "https://www.mn.uio.no/ibv/personer/vit/reina/",
           "affiliations": [],
-          "elixir-groups": []
+          "elixir-groups": [
+            {
+              "name": "node-leaders",
+              "role": null
+            }
+          ]
         },
         {
           "name": "Jon Lærdahl",
