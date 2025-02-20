@@ -12,7 +12,7 @@ To check if you already have Node.js installed, run the following command in you
 node -v
 ```
 
-This should return the version number of Node.js installed. If you see something like v16.x.x or higher, you're good to go!
+This should return the version number of Node.js installed. If you see something like v20.x.x or higher, you're good to go!
 
 ## Cloning the Repository
 
