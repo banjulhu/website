@@ -111,8 +111,8 @@ const Footer = () => {
                         <h3 className="text-sm font-semibold text-ink mb-4">Contact</h3>
                         <ul className="space-y-2 text-sm text-body">
                             <li>
-                                <a href="mailto:support@elixir.no" className="hover:text-ink decoration-marker decoration-2 underline-offset-4 hover:underline transition-colors">
-                                    support@elixir.no
+                                <a href="mailto:contact@elixir.no" className="hover:text-ink decoration-marker decoration-2 underline-offset-4 hover:underline transition-colors">
+                                    contact@elixir.no
                                 </a>
                             </li>
                             <li>
