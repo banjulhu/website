@@ -22,11 +22,13 @@ function RotatingWord({ words, playing }: { words: string[]; playing: boolean })
     return (
         <span className="rotor" aria-hidden="true">
             {words.map((word) => <span key={word} className="rotor-word invisible">{word}</span>)}
-            {/* The old phrase rises out while the new one rises in over it, so the line is never empty mid-swap. */}
+            {/* The old phrase rises out while the new one rises in over it, so the line is never empty mid-swap.
+                Search picks up every phrase from the invisible copies above, so this one stays out of it. */}
             <AnimatePresence initial={false}>
                 <motion.span
                     key={words[current]}
                     className="rotor-word"
+                    data-pagefind-ignore
                     initial={{ y: '0.5em', opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: '-0.5em', opacity: 0 }}
