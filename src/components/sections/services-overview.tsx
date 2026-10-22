@@ -63,7 +63,7 @@ export default function ServicesOverview() {
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
                         {/* Heading column */}
                         <motion.div
-                            className="lg:col-span-2 lg:sticky lg:top-32"
+                            className="lg:col-span-2 lg:sticky lg:top-[calc(var(--site-banner-height,0px)_+_8rem)]"
                             initial={{ y: 20 }}
                             whileInView={{ y: 0 }}
                             viewport={{ once: true, margin: '-60px' }}
