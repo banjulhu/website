@@ -114,8 +114,9 @@ export const Navigation = ({ pathname }: { pathname: string }) => {
         <MotionConfig reducedMotion="user">
             <CommandPalette open={searchOpen} setOpen={setSearchOpen} />
             {/* Floats inset from the edges at the top of the page; once merged it becomes a full-width
-                bar, padded so the logo and actions keep the same place across the edges. */}
-            <header className={`pointer-events-none fixed z-50 ${scrolled ? 'inset-x-0 top-0' : 'top-3 inset-x-3 sm:inset-x-5 lg:inset-x-8'}`}>
+                bar, padded so the logo and actions keep the same place across the edges. Both sit
+                below the site banner, which stays pinned to the top. */}
+            <header className={`pointer-events-none fixed z-50 ${scrolled ? 'inset-x-0 top-[var(--site-banner-height,0px)]' : 'top-[calc(var(--site-banner-height,0px)_+_0.75rem)] inset-x-3 sm:inset-x-5 lg:inset-x-8'}`}>
                 <motion.div
                     layout
                     initial={false}
