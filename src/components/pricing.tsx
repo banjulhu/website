@@ -1,12 +1,13 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
 import Button from './button';
+import type { PricingTier } from '../lib/site';
 
-export default function Pricing({ tiers }) {
+export default function Pricing({ tiers, email }: { tiers: PricingTier[]; email: string }) {
     return (
         <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {tiers.map((tier) => (
                 <div
-                    key={tier.id}
+                    key={tier.name}
                     className={`relative flex flex-col rounded-card border bg-surface p-5 ${
                         tier.mostPopular
                             ? 'border-ink'
@@ -50,7 +51,7 @@ export default function Pricing({ tiers }) {
                     </ul>
 
                     <Button
-                        href="mailto:support@elixir.no"
+                        href={`mailto:${email}`}
                         variant={tier.mostPopular ? 'primary' : 'link'}
                         size="sm"
                         className="mt-6 self-center"

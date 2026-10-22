@@ -3,179 +3,93 @@ import Page from "../layouts/page.astro";
 import Pricing from "../components/pricing.tsx";
 import Callout from "../components/callout.tsx";
 import Button from "../components/button.tsx";
+import Block from "../components/block.astro";
 import { AcademicCapIcon, CheckIcon, CircleStackIcon, DocumentTextIcon, QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
+import { getBlockTitle } from "../lib/blocks";
+import { site } from "../lib/site";
+
+const { seo, heading, intro, documentation, howItWorks, offer, pricing } = site.researchSupport;
+const { supportEmail } = site.contact;
+
+const offerCards = [
+    { ...offer.supportTypes, Icon: QuestionMarkCircleIcon },
+    { ...offer.dataTypes, Icon: CircleStackIcon },
+    { ...offer.fields, Icon: AcademicCapIcon },
+];
+
+const serviceAgreementTitle = await getBlockTitle("research-support-service-agreement");
 ---
 
-<Page variant="wide" seo={{
-    title: "Research Support",
-    description: "Expert bioinformatics support for Norwegian life science researchers — from quick consultations to full project collaborations, provided free of charge by ELIXIR Norway.",
-}}>
+<Page variant="wide" seo={seo}>
 
     <!-- Hero -->
     <div class="max-w-3xl">
         <p class="flex items-center gap-2 text-sm font-semibold text-marker-text tracking-wide uppercase"><span class="h-2 w-2 rounded-marker bg-marker" aria-hidden="true" />Research Support</p>
         <h1 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-[1.1]">
-            Expert bioinformatics help for your research
+            {heading}
         </h1>
         <p class="mt-6 text-base sm:text-lg leading-relaxed text-body max-w-2xl">
-            From quick consultations to long-term collaborations — our team across five universities
-            helps you design experiments, analyse data, and manage your research outputs.
+            {intro}
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <Button href="mailto:support@elixir.no">support@elixir.no</Button>
-            <Button href="https://nels-docs.readthedocs.io/en/latest/" variant="link" external>NeLS user documentation</Button>
+            <Button href={`mailto:${supportEmail}`}>{supportEmail}</Button>
+            <Button href={documentation.href} variant="link" external>{documentation.label}</Button>
         </div>
     </div>
 
     <!-- How it works -->
     <div class="mt-12">
-        <Callout title="How does it work?" variant="info">
-            When a request is submitted, it is broadcast to all members of the Helpdesk.
-            The request is then picked up by the member with the most expertise on the topic.
-            We typically reply within 1 working day.
+        <Callout title={howItWorks.title} variant="info">
+            {howItWorks.body}
         </Callout>
     </div>
 
     <!-- What we offer -->
     <section class="mt-16 lg:mt-20">
-        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">What we offer</h2>
-        <p class="mt-3 text-base leading-relaxed text-body max-w-2xl">Expertise across bioinformatics, data management, and life science research.</p>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">{offer.heading}</h2>
+        <p class="mt-3 text-base leading-relaxed text-body max-w-2xl">{offer.intro}</p>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
-            <!-- Support types -->
-            <div class="rounded-card border border-rule bg-surface p-5">
-                <div class="h-9 w-9 rounded-control border border-rule flex items-center justify-center mb-4">
-                    <QuestionMarkCircleIcon className="h-5 w-5 text-ink" aria-hidden="true" />
+            {offerCards.map(({ title, items, Icon }) => (
+                <div class="rounded-card border border-rule bg-surface p-5">
+                    <div class="h-9 w-9 rounded-control border border-rule flex items-center justify-center mb-4">
+                        <Icon className="h-5 w-5 text-ink" aria-hidden="true" />
+                    </div>
+                    <h3 class="text-base font-semibold text-ink">{title}</h3>
+                    <ul class="mt-3 space-y-2">
+                        {items.map(item => (
+                            <li class="flex items-start gap-2 text-sm text-body">
+                                <CheckIcon className="h-4 w-4 shrink-0 mt-0.5 text-accent" aria-hidden="true" />
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-                <h3 class="text-base font-semibold text-ink">Support types</h3>
-                <ul class="mt-3 space-y-2">
-                    {["General advice & experimental design", "Programming & scripting assistance", "Data analysis & interpretation", "Data management & archiving"].map(item => (
-                        <li class="flex items-start gap-2 text-sm text-body">
-                            <CheckIcon className="h-4 w-4 shrink-0 mt-0.5 text-accent" aria-hidden="true" />
-                            {item}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
-            <!-- Data types -->
-            <div class="rounded-card border border-rule bg-surface p-5">
-                <div class="h-9 w-9 rounded-control border border-rule flex items-center justify-center mb-4">
-                    <CircleStackIcon className="h-5 w-5 text-ink" aria-hidden="true" />
-                </div>
-                <h3 class="text-base font-semibold text-ink">Data types</h3>
-                <ul class="mt-3 space-y-2">
-                    {["High-throughput sequence data (DNA/RNA)", "Proteomics & structural data", "ChIP-seq & epigenomics", "Metagenomics & microbiome"].map(item => (
-                        <li class="flex items-start gap-2 text-sm text-body">
-                            <CheckIcon className="h-4 w-4 shrink-0 mt-0.5 text-accent" aria-hidden="true" />
-                            {item}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
-            <!-- Fields -->
-            <div class="rounded-card border border-rule bg-surface p-5">
-                <div class="h-9 w-9 rounded-control border border-rule flex items-center justify-center mb-4">
-                    <AcademicCapIcon className="h-5 w-5 text-ink" aria-hidden="true" />
-                </div>
-                <h3 class="text-base font-semibold text-ink">Fields of expertise</h3>
-                <ul class="mt-3 space-y-2">
-                    {["Genome & transcriptome assembly", "Variant calling & annotation", "Gene expression & epigenetics", "Statistical genomics & network analysis", "Cancer, health & marine biology"].map(item => (
-                        <li class="flex items-start gap-2 text-sm text-body">
-                            <CheckIcon className="h-4 w-4 shrink-0 mt-0.5 text-accent" aria-hidden="true" />
-                            {item}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            ))}
         </div>
     </section>
 
     <!-- Support model -->
     <section class="mt-16 lg:mt-20">
         <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">Support model</h2>
-        <div class="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-body">
-            <p>
-                Projects that can be solved within a working day are <strong class="font-semibold text-ink">free of charge</strong>,
-                enabled by funding from the Research Council of Norway. For more demanding projects, an hourly rate applies and
-                you will need to enter an agreement with ELIXIR Norway.
-            </p>
-            <p>
-                Projects beyond technical assistance may be set up as a research collaboration,
-                e.g. by providing funding for a percentage of the position of a helpdesk member.
-            </p>
-        </div>
+        <Block slug="research-support-model" class="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-body" />
 
         <!-- Service agreement -->
         <div class="mt-8 rounded-card border border-rule bg-surface p-5 max-w-3xl">
             <div class="flex items-center gap-3 mb-3">
                 <DocumentTextIcon className="h-5 w-5 text-ink shrink-0" aria-hidden="true" />
-                <h3 class="text-base font-semibold text-ink">The Service Agreement</h3>
+                <h3 class="text-base font-semibold text-ink">{serviceAgreementTitle}</h3>
             </div>
-            <p class="text-sm leading-relaxed text-body">
-                For requests requiring more than a working day, an agreement between the client and the platform
-                must be made covering service type and cost. If applicable, the agreement should include a plan for
-                <em class="font-medium text-ink not-italic">publication</em> and
-                <em class="font-medium text-ink not-italic">co-authorship</em>.
-                Regardless of contribution type, we expect to be included in the
-                <strong class="font-semibold text-ink">acknowledgements</strong> of resulting publications.
-            </p>
+            <Block slug="research-support-service-agreement" class="text-sm leading-relaxed text-body" />
         </div>
     </section>
 
     <!-- Pricing -->
     <section class="mt-16 lg:mt-20">
-        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">Pricing</h2>
-        <p class="mt-3 text-base leading-relaxed text-body max-w-2xl">Transparent pricing based on project scope and duration.</p>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">{pricing.heading}</h2>
+        <p class="mt-3 text-base leading-relaxed text-body max-w-2xl">{pricing.intro}</p>
 
-        <Pricing
-            tiers={[
-                {
-                    name: 'Basic',
-                    id: 'tier-basic',
-                    price: 'FREE',
-                    period: null,
-                    description: 'Quick support enabled by RCN funding.',
-                    features: [
-                        'Up to 1 day of work or consultancy',
-                        'Experimental design',
-                        'Data management advice and planning',
-                        'Support for NeLS and Galaxy users'
-                    ],
-                    mostPopular: false,
-                },
-                {
-                    name: 'Defined',
-                    id: 'tier-defined',
-                    price: '950/1500 NOK',
-                    period: "hour",
-                    description: 'For longer projects or recurring interactions.',
-                    features: [
-                        '950 NOK (academia)',
-                        '1500 NOK (industry)',
-                        'Flexible support time',
-                        'Data management and brokering',
-                        'Bioinformatics services and analyses'
-                    ],
-                    mostPopular: true,
-                },
-                {
-                    name: 'End-to-end',
-                    id: 'tier-enterprise',
-                    price: "Custom",
-                    period: null,
-                    description: 'Formal collaboration with dedicated support.',
-                    features: [
-                        'Long-term support',
-                        'Research collaboration',
-                        'Project-embedded support staff',
-                        'Co-participation in proposals'
-                    ],
-                    mostPopular: false,
-                },
-            ]}
-        />
+        <Pricing tiers={pricing.tiers} email={supportEmail} />
     </section>
 
 </Page>
