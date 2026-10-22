@@ -9,11 +9,13 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 const text = z.string().trim().min(1);
 const email = z.string().email();
 
-// Paths on this site are stored without the base path and get it here.
-const withBase = (value: string) => (value.startsWith('/') ? `${BASE}${value}` : value);
-const sitePath = z.string().startsWith('/', 'must be a path on this site, starting with /').transform(withBase);
+// Paths on this site are stored without the base path and get it here. A
+// leading // (or /\, which browsers read the same way) would point at another host.
+const SITE_PATH = /^\/(?![/\\])/;
+const withBase = (value: string) => (SITE_PATH.test(value) ? `${BASE}${value}` : value);
+const sitePath = z.string().regex(SITE_PATH, 'must be a path on this site, starting with a single /').transform(withBase);
 const href = z.string()
-    .regex(/^(https:\/\/|mailto:|\/)/, 'must start with https://, mailto: or /')
+    .regex(/^(https:\/\/|mailto:|\/(?![/\\]))/, 'must start with https://, mailto: or a single /')
     .transform(withBase);
 
 const link = z.object({ label: text, href }).strict();
