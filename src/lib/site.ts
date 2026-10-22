@@ -10,12 +10,16 @@ const text = z.string().trim().min(1);
 const email = z.string().email();
 
 // Paths on this site are stored without the base path and get it here. A
-// leading // (or /\, which browsers read the same way) would point at another host.
-const SITE_PATH = /^\/(?![/\\])/;
+// leading // (or /\, which browsers read the same way) would point at another
+// host, and browsers drop tabs and line breaks before reading those slashes,
+// so links may not contain whitespace either.
+const SITE_PATH = /^\/(?![/\\])\S*$/;
 const withBase = (value: string) => (SITE_PATH.test(value) ? `${BASE}${value}` : value);
-const sitePath = z.string().regex(SITE_PATH, 'must be a path on this site, starting with a single /').transform(withBase);
+const sitePath = z.string()
+    .regex(SITE_PATH, 'must be a path on this site, starting with a single /, with no spaces')
+    .transform(withBase);
 const href = z.string()
-    .regex(/^(https:\/\/|mailto:|\/(?![/\\]))/, 'must start with https://, mailto: or a single /')
+    .regex(/^(https:\/\/|mailto:|\/(?![/\\]))\S*$/, 'must start with https://, mailto: or a single /, with no spaces')
     .transform(withBase);
 
 const link = z.object({ label: text, href }).strict();
@@ -33,7 +37,7 @@ const tier = z.object({
     mostPopular: z.boolean(),
 }).strict();
 
-const schema = z.object({
+export const schema = z.object({
     contact: z.object({
         supportEmail: email,
         generalEmail: email,
