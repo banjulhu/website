@@ -55,6 +55,8 @@
 
   html {
     font-size: 16px;
+    /* In-page links and focus land below the fixed navigation and the site banner. */
+    scroll-padding-top: calc(var(--site-banner-height, 0px) + var(--nav-offset) + 1rem);
 
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
@@ -125,25 +127,13 @@
   .rotor {
     display: grid;
     place-items: center;
-    perspective: 6em;
   }
 
   .rotor-word {
     grid-area: 1 / 1;
-    visibility: hidden;
     max-width: 100%;
     text-align: center;
     text-wrap: balance;
-    transform-origin: 50% 50% -0.5em;
-    backface-visibility: hidden;
-
-    &.is-on, &.is-out { visibility: visible; }
-    &.is-in { animation: rotor-in 0.6s cubic-bezier(0.22, 0.8, 0.26, 1) both; }
-    &.is-out { animation: rotor-out 0.6s cubic-bezier(0.22, 0.8, 0.26, 1) both; }
-
-    @media (prefers-reduced-motion: reduce) {
-      animation: none !important;
-    }
   }
 
   /* Soft paper halo that keeps hero copy legible over the video without a box behind it. */
@@ -152,16 +142,6 @@
       0 0 2px rgb(var(--color-paper) / 0.7),
       0 0 10px rgb(var(--color-paper) / 0.65),
       0 0 30px rgb(var(--color-paper) / 0.55);
-  }
-
-  @keyframes rotor-in {
-    from { transform: rotateX(90deg); opacity: 0.25; }
-    to { transform: rotateX(0); opacity: 1; }
-  }
-
-  @keyframes rotor-out {
-    from { transform: rotateX(0); opacity: 1; }
-    to { transform: rotateX(-90deg); opacity: 0.25; }
   }
 
   .content {

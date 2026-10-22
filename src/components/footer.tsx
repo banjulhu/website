@@ -50,7 +50,7 @@ const Footer = () => {
                             >
                                 ELIXIR
                             </a>
-                            {' '} the European infrastructure for life science data.
+                            {' '}&ndash; the European infrastructure for life science data.
                         </p>
                         <div className="flex gap-3">
                             {socials.map(({ name, href, icon: Icon }) => (

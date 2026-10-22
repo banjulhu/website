@@ -1,4 +1,4 @@
-import { MotionConfig, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, MotionConfig, motion, useReducedMotion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { PauseIcon, PlayIcon } from '@heroicons/react/20/solid';
@@ -6,35 +6,37 @@ import Button from './button';
 import HeroVideo from './hero-video';
 import type { HeroCopy } from '../lib/site';
 
-const FLIP_MS = 600;
+const SWAP = { duration: 0.5, ease: [0.22, 1, 0.36, 1] } as const;
 // Multi-word phrases stay a little longer than single fields so they can be read.
 const dwellMs = (word: string, words: string[]) => (word.includes(' ') && word !== words[0] ? 2600 : 2300);
 
 function RotatingWord({ words, playing }: { words: string[]; playing: boolean }) {
-    const [{ current, leaving }, setFlip] = useState<{ current: number; leaving: number | null }>({ current: 0, leaving: null });
+    const [current, setCurrent] = useState(0);
 
     useEffect(() => {
         if (!playing) return;
-        const id = setTimeout(() => {
-            setFlip(({ current }) => ({ current: (current + 1) % words.length, leaving: current }));
-        }, FLIP_MS + dwellMs(words[current], words));
+        const id = setTimeout(() => setCurrent((i) => (i + 1) % words.length), SWAP.duration * 1000 + dwellMs(words[current], words));
         return () => clearTimeout(id);
     }, [playing, current, words]);
 
-    useEffect(() => {
-        if (leaving === null) return;
-        const id = setTimeout(() => setFlip(flip => ({ ...flip, leaving: null })), FLIP_MS);
-        return () => clearTimeout(id);
-    }, [leaving]);
-
     return (
         <span className="rotor" aria-hidden="true">
-            {words.map((word, i) => {
-                const state = i === current
-                    ? (leaving === null ? 'is-on' : 'is-on is-in')
-                    : i === leaving ? 'is-out' : '';
-                return <span key={word} className={`rotor-word ${state}`}>{word}</span>;
-            })}
+            {words.map((word) => <span key={word} className="rotor-word invisible">{word}</span>)}
+            {/* The old phrase rises out while the new one rises in over it, so the line is never empty mid-swap.
+                Search picks up every phrase from the invisible copies above, so this one stays out of it. */}
+            <AnimatePresence initial={false}>
+                <motion.span
+                    key={words[current]}
+                    className="rotor-word"
+                    data-pagefind-ignore
+                    initial={{ y: '0.5em', opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: '-0.5em', opacity: 0 }}
+                    transition={SWAP}
+                >
+                    {words[current]}
+                </motion.span>
+            </AnimatePresence>
         </span>
     );
 }

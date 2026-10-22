@@ -20,7 +20,8 @@ function formatDate(dateString: string): string {
 }
 
 const news = await getCollection('news');
-news.sort((a, b) => parseDate(b.data.date) - parseDate(a.data.date));
+// Same-date entries fall back to their id, so every build lists them in the same order.
+news.sort((a, b) => parseDate(b.data.date) - parseDate(a.data.date) || a.id.localeCompare(b.id));
 
 // Build year list with counts (newest first)
 const yearCounts = new Map<string, number>();

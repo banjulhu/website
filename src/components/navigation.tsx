@@ -113,16 +113,18 @@ export const Navigation = ({ pathname }: { pathname: string }) => {
     return (
         <MotionConfig reducedMotion="user">
             <CommandPalette open={searchOpen} setOpen={setSearchOpen} />
-            <header className="pointer-events-none fixed top-3 inset-x-3 sm:inset-x-5 lg:inset-x-8 z-50">
+            {/* Floats inset from the edges at the top of the page; once merged it becomes a full-width
+                bar, padded so the logo and actions keep the same place across the edges. Both sit
+                below the site banner, which stays pinned to the top. */}
+            <header className={`pointer-events-none fixed z-50 ${scrolled ? 'inset-x-0 top-[var(--site-banner-height,0px)]' : 'top-[calc(var(--site-banner-height,0px)_+_0.75rem)] inset-x-3 sm:inset-x-5 lg:inset-x-8'}`}>
                 <motion.div
                     layout
                     initial={false}
                     transition={layoutTransition}
-                    style={{ borderRadius: PILL_RADIUS }}
                     data-merged={scrolled}
-                    className={`group relative grid grid-cols-[1fr_auto_1fr] items-center ${scrolled ? 'pointer-events-auto px-4 py-2 lg:px-5' : ''}`}
+                    className={`group relative grid grid-cols-[1fr_auto_1fr] items-center ${scrolled ? 'pointer-events-auto px-3 py-2 sm:px-5 lg:px-8' : ''}`}
                 >
-                    <Skin visible={scrolled} radius={PILL_RADIUS} transition={layoutTransition} className="shadow-lg shadow-black/[0.08] dark:shadow-black/30" />
+                    <Skin visible={scrolled} radius={0} transition={layoutTransition} className="shadow-lg shadow-black/[0.08] dark:shadow-black/30" />
 
                     <nav aria-label="Main navigation" className="contents">
                         {/* Logo: floats large on its own at the top, shrinks into the bar once merged */}
@@ -251,8 +253,10 @@ export const Navigation = ({ pathname }: { pathname: string }) => {
                         aria-modal="true"
                         aria-label="Mobile navigation"
                     >
-                        <nav aria-label="Mobile navigation" className="flex-1 flex flex-col justify-center overflow-y-auto overscroll-contain px-8 sm:px-12 pt-24 pb-4">
-                            <ul className="space-y-1">
+                        {/* Auto margins centre the links while they fit and, unlike justify-center, let them
+                            scroll from the top when they don't, so none is stuck under the header. */}
+                        <nav aria-label="Mobile navigation" className="flex-1 flex flex-col overflow-y-auto overscroll-contain px-8 sm:px-12 pt-[calc(var(--site-banner-height,0px)_+_6rem)] pb-4">
+                            <ul className="my-auto space-y-1">
                                 {navigation.map((item, i) => {
                                     const active = isActivePath(pathname, item.href);
                                     const bigLink = `block py-2.5 landscape:py-1.5 text-2xl landscape:text-xl sm:text-3xl font-semibold tracking-tight text-ink decoration-marker decoration-2 underline-offset-[6px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:rounded-control ${active ? 'underline' : 'hover:underline'}`;

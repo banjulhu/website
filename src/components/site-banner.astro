@@ -27,7 +27,7 @@ function renderInlineMarkdown(md: string): string {
         </svg>
         <p set:html={renderInlineMarkdown(message)} />
         <button
-            onclick="document.getElementById('site-banner').remove(); sessionStorage.setItem('banner-dismissed','1')"
+            onclick="document.getElementById('site-banner').remove(); document.documentElement.style.removeProperty('--site-banner-height'); sessionStorage.setItem('banner-dismissed','1')"
             class="fixed right-3 top-1 p-1 rounded-control !text-paper/60 hover:!text-paper hover:bg-paper/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-paper/50 z-[61]"
             aria-label="Dismiss announcement"
         >
@@ -51,8 +51,16 @@ function renderInlineMarkdown(md: string): string {
 </style>
 
 <script is:inline>
-    if (sessionStorage.getItem('banner-dismissed') === '1') {
+    (() => {
         const b = document.getElementById('site-banner');
-        if (b) b.remove();
-    }
+        if (!b) return;
+        if (sessionStorage.getItem('banner-dismissed') === '1') {
+            b.remove();
+            return;
+        }
+        // The fixed navigation sits below the banner, which stays pinned to the top while scrolling.
+        const reserve = () => document.documentElement.style.setProperty('--site-banner-height', `${b.offsetHeight}px`);
+        reserve();
+        new ResizeObserver(reserve).observe(b);
+    })();
 </script>
