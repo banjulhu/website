@@ -23,7 +23,8 @@ export async function GET(context: any) {
     }));
 
     const items = [...newsItems, ...eventItems]
-        .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
+        // Same-date items fall back to their link, so every build orders the feed the same way.
+        .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime() || a.link.localeCompare(b.link));
 
     return rss({
         title: 'ELIXIR Norway',
