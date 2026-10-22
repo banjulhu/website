@@ -6,6 +6,7 @@ import LatestNews from "../components/sections/latest-news.astro";
 import HighlightsCarousel from "../components/highlights-carousel.tsx";
 import OrganisationMarquee from "../components/organisation-marquee.tsx";
 import slides from "../data/slides.json";
+import { site } from "../lib/site";
 ---
 
 <BaseLayout seo={{
@@ -29,7 +30,7 @@ import slides from "../data/slides.json";
         ],
     })} />
     <main id="main-content">
-        <Hero client:load />
+        <Hero client:load copy={site.hero} />
 
         <section class="py-16 lg:py-20 bg-surface border-y border-rule">
             <div class="max-w-7xl mx-auto px-6 sm:px-8">

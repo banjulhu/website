@@ -88,6 +88,16 @@ const services = defineCollection({
     }),
 });
 
+// Prose that editors change and that needs inline links or emphasis, rendered
+// into pages by src/components/block.astro. Short plain strings live in
+// src/data/site.json instead.
+const blocks = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string().trim().min(1).optional(),
+    }).strict(),
+});
+
 export const collections = {
     news,
     services,
@@ -95,4 +105,5 @@ export const collections = {
     about,
     'funding-and-projects': fundingAndProjects,
     accessibility,
+    blocks,
 };

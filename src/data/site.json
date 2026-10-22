@@ -1,0 +1,246 @@
+{
+    "contact": {
+        "supportEmail": "support@elixir.no",
+        "generalEmail": "contact@elixir.no"
+    },
+    "hero": {
+        "tagline": {
+            "label": "Part of the European ELIXIR infrastructure",
+            "href": "https://elixir-europe.org"
+        },
+        "headline": "Research infrastructure for",
+        "rotatingWords": [
+            "life science",
+            "genomics",
+            "bioinformatics",
+            "biomedical",
+            "proteomics",
+            "AI-ready data",
+            "scientists across Norway",
+            "discoveries that matter",
+            "data you can trust",
+            "understanding life",
+            "the next generation"
+        ],
+        "subline": "ELIXIR Norway supports life science researchers with bioinformatics services, data management tools, and secure e-infrastructure. Part of Europe's leading bioinformatics network.",
+        "primaryAction": {
+            "label": "Explore services",
+            "href": "/services"
+        },
+        "secondaryAction": {
+            "label": "Get support",
+            "href": "/research-support"
+        }
+    },
+    "footer": {
+        "navigation": [
+            {
+                "label": "About",
+                "href": "/about"
+            },
+            {
+                "label": "Research Support",
+                "href": "/research-support"
+            },
+            {
+                "label": "Services",
+                "href": "/services"
+            },
+            {
+                "label": "Funding & Projects",
+                "href": "/funding-and-projects"
+            },
+            {
+                "label": "News",
+                "href": "/news"
+            },
+            {
+                "label": "Events",
+                "href": "/events"
+            },
+            {
+                "label": "Training",
+                "href": "/training"
+            },
+            {
+                "label": "Accessibility",
+                "href": "/accessibility"
+            }
+        ],
+        "careers": {
+            "label": "Careers at ELIXIR",
+            "href": "https://elixir-europe.org/about-us/vacancies"
+        },
+        "socials": {
+            "linkedin": "https://www.linkedin.com/company/elixir-norway",
+            "youtube": "https://www.youtube.com/channel/UCvwFIw5HomylguGOGxR8B8w",
+            "flickr": "https://www.flickr.com/photos/elixir-europe/"
+        },
+        "partners": [
+            {
+                "name": "University of Bergen",
+                "href": "https://uib.no/",
+                "logo": "/assets/logos/orgs/uib.svg"
+            },
+            {
+                "name": "University of Oslo",
+                "href": "https://uio.no/",
+                "logo": "/assets/logos/orgs/uio.svg"
+            },
+            {
+                "name": "UiT The Arctic University of Norway",
+                "href": "https://uit.no/",
+                "logo": "/assets/logos/orgs/uit.svg"
+            },
+            {
+                "name": "NTNU",
+                "href": "https://ntnu.no/",
+                "logo": "/assets/logos/orgs/ntnu.svg"
+            },
+            {
+                "name": "NMBU",
+                "href": "https://nmbu.no/",
+                "logo": "/assets/logos/orgs/nmbu.svg"
+            }
+        ],
+        "funders": [
+            {
+                "name": "Research Council of Norway",
+                "href": "https://forskningsradet.no/",
+                "logo": "/assets/logos/orgs/nfr.svg"
+            },
+            {
+                "name": "NordForsk",
+                "href": "https://www.nordforsk.org",
+                "logo": "/assets/logos/orgs/nordforsk.svg"
+            },
+            {
+                "name": "Co-funded by the European Union",
+                "href": "https://research-and-innovation.ec.europa.eu/",
+                "logo": "/assets/logos/orgs/eu.svg"
+            }
+        ],
+        "fundingNote": "Financed by the Research Council of Norway (grants 208481, 270068, 295932, 350529), its partner institutions, NordForsk, and co-funded by the European Union."
+    },
+    "training": {
+        "seo": {
+            "title": "Training",
+            "description": "Open-access bioinformatics training from ELIXIR Norway: introductory workshops to advanced courses in genomics, data management, and computational biology."
+        },
+        "heading": "Bioinformatics training for every level",
+        "intro": "From introductory workshops to advanced domain-specific courses, ELIXIR Norway provides open-access training to support life science researchers across Norway and internationally.",
+        "resources": {
+            "heading": "Find courses and materials",
+            "intro": "Browse our catalogue of available courses, categorised by topic and proficiency level. All training materials are open-access.",
+            "tess": {
+                "name": "ELIXIR TeSS",
+                "caption": "Course catalogue",
+                "href": "https://tess.elixir-europe.org/"
+            },
+            "github": {
+                "name": "GitHub",
+                "caption": "Training materials",
+                "href": "https://github.com/ELIXIR-Norway-Training"
+            },
+            "zenodo": {
+                "name": "Zenodo",
+                "caption": "Archived materials",
+                "href": "https://zenodo.org/communities/elixir-no/records?q=&f=resource_type%3Alesson&f=resource_type%3Apresentation&l=list&p=1&s=10&sort=newest"
+            }
+        }
+    },
+    "researchSupport": {
+        "seo": {
+            "title": "Research Support",
+            "description": "Expert bioinformatics support for Norwegian life science researchers, from quick consultations to full project collaborations, provided free of charge by ELIXIR Norway."
+        },
+        "heading": "Expert bioinformatics help for your research",
+        "intro": "From quick consultations to long-term collaborations, our team across five universities helps you design experiments, analyse data, and manage your research outputs.",
+        "documentation": {
+            "label": "NeLS user documentation",
+            "href": "https://nels-docs.readthedocs.io/en/latest/"
+        },
+        "howItWorks": {
+            "title": "How does it work?",
+            "body": "When a request is submitted, it is broadcast to all members of the Helpdesk. The request is then picked up by the member with the most expertise on the topic. We typically reply within 1 working day."
+        },
+        "offer": {
+            "heading": "What we offer",
+            "intro": "Expertise across bioinformatics, data management, and life science research.",
+            "supportTypes": {
+                "title": "Support types",
+                "items": [
+                    "General advice & experimental design",
+                    "Programming & scripting assistance",
+                    "Data analysis & interpretation",
+                    "Data management & archiving"
+                ]
+            },
+            "dataTypes": {
+                "title": "Data types",
+                "items": [
+                    "High-throughput sequence data (DNA/RNA)",
+                    "Proteomics & structural data",
+                    "ChIP-seq & epigenomics",
+                    "Metagenomics & microbiome"
+                ]
+            },
+            "fields": {
+                "title": "Fields of expertise",
+                "items": [
+                    "Genome & transcriptome assembly",
+                    "Variant calling & annotation",
+                    "Gene expression & epigenetics",
+                    "Statistical genomics & network analysis",
+                    "Cancer, health & marine biology"
+                ]
+            }
+        },
+        "pricing": {
+            "heading": "Pricing",
+            "intro": "Transparent pricing based on project scope and duration.",
+            "tiers": [
+                {
+                    "name": "Basic",
+                    "price": "FREE",
+                    "period": null,
+                    "description": "Quick support enabled by RCN funding.",
+                    "features": [
+                        "Up to 1 day of work or consultancy",
+                        "Experimental design",
+                        "Data management advice and planning",
+                        "Support for NeLS and Galaxy users"
+                    ],
+                    "mostPopular": false
+                },
+                {
+                    "name": "Defined",
+                    "price": "950/1500 NOK",
+                    "period": "hour",
+                    "description": "For longer projects or recurring interactions.",
+                    "features": [
+                        "950 NOK (academia)",
+                        "1500 NOK (industry)",
+                        "Flexible support time",
+                        "Data management and brokering",
+                        "Bioinformatics services and analyses"
+                    ],
+                    "mostPopular": true
+                },
+                {
+                    "name": "End-to-end",
+                    "price": "Custom",
+                    "period": null,
+                    "description": "Formal collaboration with dedicated support.",
+                    "features": [
+                        "Long-term support",
+                        "Research collaboration",
+                        "Project-embedded support staff",
+                        "Co-participation in proposals"
+                    ],
+                    "mostPopular": false
+                }
+            ]
+        }
+    }
+}

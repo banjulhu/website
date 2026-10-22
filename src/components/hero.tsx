@@ -4,29 +4,22 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { PauseIcon, PlayIcon } from '@heroicons/react/20/solid';
 import Button from './button';
 import HeroVideo from './hero-video';
+import type { HeroCopy } from '../lib/site';
 
-
-const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-// The first phrase is also the static fallback and completes the sr-only heading.
-const WORDS = [
-    'life science', 'genomics', 'bioinformatics', 'biomedical', 'proteomics',
-    'AI-ready data', 'scientists across Norway', 'discoveries that matter', 'data you can trust', 'understanding life', 'the next generation',
-];
 const FLIP_MS = 600;
 // Multi-word phrases stay a little longer than single fields so they can be read.
-const dwellMs = (word: string) => (word.includes(' ') && word !== WORDS[0] ? 2600 : 2300);
+const dwellMs = (word: string, words: string[]) => (word.includes(' ') && word !== words[0] ? 2600 : 2300);
 
-function RotatingWord({ playing }: { playing: boolean }) {
+function RotatingWord({ words, playing }: { words: string[]; playing: boolean }) {
     const [{ current, leaving }, setFlip] = useState<{ current: number; leaving: number | null }>({ current: 0, leaving: null });
 
     useEffect(() => {
         if (!playing) return;
         const id = setTimeout(() => {
-            setFlip(({ current }) => ({ current: (current + 1) % WORDS.length, leaving: current }));
-        }, FLIP_MS + dwellMs(WORDS[current]));
+            setFlip(({ current }) => ({ current: (current + 1) % words.length, leaving: current }));
+        }, FLIP_MS + dwellMs(words[current], words));
         return () => clearTimeout(id);
-    }, [playing, current]);
+    }, [playing, current, words]);
 
     useEffect(() => {
         if (leaving === null) return;
@@ -36,7 +29,7 @@ function RotatingWord({ playing }: { playing: boolean }) {
 
     return (
         <span className="rotor" aria-hidden="true">
-            {WORDS.map((word, i) => {
+            {words.map((word, i) => {
                 const state = i === current
                     ? (leaving === null ? 'is-on' : 'is-on is-in')
                     : i === leaving ? 'is-out' : '';
@@ -46,7 +39,7 @@ function RotatingWord({ playing }: { playing: boolean }) {
     );
 }
 
-export function Hero() {
+export function Hero({ copy }: { copy: HeroCopy }) {
     const shouldReduceMotion = useReducedMotion();
     const [paused, setPaused] = useState(false);
     const playing = !paused && !shouldReduceMotion;
@@ -73,12 +66,12 @@ export function Hero() {
                             />
                             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }}>
                                 <a
-                                    href="https://elixir-europe.org"
+                                    href={copy.tagline.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hero-legible inline-flex items-center gap-2.5 text-sm font-semibold text-ink hover:underline underline-offset-4 before:h-2 before:w-2 before:rounded-marker before:bg-marker before:content-['']"
                                 >
-                                    Part of the European ELIXIR infrastructure
+                                    {copy.tagline.label}
                                     <ArrowTopRightOnSquareIcon className="h-3.5 w-3.5 text-muted" aria-hidden="true" />
                                 </a>
                             </motion.div>
@@ -88,10 +81,10 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 className="mt-4 sm:mt-5 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-semibold tracking-[-0.035em] text-ink leading-[1.05] text-balance hero-legible"
                             >
-                                <span className="sr-only">Research infrastructure for life science</span>
-                                <span aria-hidden="true">Research infrastructure for</span>
+                                <span className="sr-only">{`${copy.headline} ${copy.rotatingWords[0]}`}</span>
+                                <span aria-hidden="true">{copy.headline}</span>
                                 <span className="block">
-                                    <RotatingWord playing={playing} />
+                                    <RotatingWord words={copy.rotatingWords} playing={playing} />
                                 </span>
                             </motion.h1>
 
@@ -100,9 +93,7 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 className="mt-6 sm:mt-8 text-base sm:text-lg leading-relaxed text-ink max-w-2xl mx-auto hero-legible"
                             >
-                                ELIXIR Norway supports life science researchers with bioinformatics
-                                services, data management tools, and secure e-infrastructure.
-                                Part of Europe's leading bioinformatics network.
+                                {copy.subline}
                             </motion.p>
 
                             <motion.div
@@ -110,8 +101,8 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.4 }}
                                 className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
                             >
-                                <Button href={`${BASE}/services`}>Explore services</Button>
-                                <Button href={`${BASE}/research-support`} variant="link" className="hero-legible">Get support</Button>
+                                <Button href={copy.primaryAction.href}>{copy.primaryAction.label}</Button>
+                                <Button href={copy.secondaryAction.href} variant="link" className="hero-legible">{copy.secondaryAction.label}</Button>
                             </motion.div>
                         </div>
                     </div>
