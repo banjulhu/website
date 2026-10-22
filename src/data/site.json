@@ -60,7 +60,7 @@
     "training": {
         "seo": {
             "title": "Training",
-            "description": "Open-access bioinformatics training from ELIXIR Norway — introductory workshops to advanced courses in genomics, data management, and computational biology."
+            "description": "Open-access bioinformatics training from ELIXIR Norway: introductory workshops to advanced courses in genomics, data management, and computational biology."
         },
         "heading": "Bioinformatics training for every level",
         "intro": "From introductory workshops to advanced domain-specific courses, ELIXIR Norway provides open-access training to support life science researchers across Norway and internationally.",
@@ -75,10 +75,10 @@
     "researchSupport": {
         "seo": {
             "title": "Research Support",
-            "description": "Expert bioinformatics support for Norwegian life science researchers — from quick consultations to full project collaborations, provided free of charge by ELIXIR Norway."
+            "description": "Expert bioinformatics support for Norwegian life science researchers, from quick consultations to full project collaborations, provided free of charge by ELIXIR Norway."
         },
         "heading": "Expert bioinformatics help for your research",
-        "intro": "From quick consultations to long-term collaborations — our team across five universities helps you design experiments, analyse data, and manage your research outputs.",
+        "intro": "From quick consultations to long-term collaborations, our team across five universities helps you design experiments, analyse data, and manage your research outputs.",
         "documentation": { "label": "NeLS user documentation", "href": "https://nels-docs.readthedocs.io/en/latest/" },
         "howItWorks": {
             "title": "How does it work?",
