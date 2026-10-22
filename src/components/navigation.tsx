@@ -253,8 +253,10 @@ export const Navigation = ({ pathname }: { pathname: string }) => {
                         aria-modal="true"
                         aria-label="Mobile navigation"
                     >
-                        <nav aria-label="Mobile navigation" className="flex-1 flex flex-col justify-center overflow-y-auto overscroll-contain px-8 sm:px-12 pt-24 pb-4">
-                            <ul className="space-y-1">
+                        {/* Auto margins centre the links while they fit and, unlike justify-center, let them
+                            scroll from the top when they don't, so none is stuck under the header. */}
+                        <nav aria-label="Mobile navigation" className="flex-1 flex flex-col overflow-y-auto overscroll-contain px-8 sm:px-12 pt-[calc(var(--site-banner-height,0px)_+_6rem)] pb-4">
+                            <ul className="my-auto space-y-1">
                                 {navigation.map((item, i) => {
                                     const active = isActivePath(pathname, item.href);
                                     const bigLink = `block py-2.5 landscape:py-1.5 text-2xl landscape:text-xl sm:text-3xl font-semibold tracking-tight text-ink decoration-marker decoration-2 underline-offset-[6px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:rounded-control ${active ? 'underline' : 'hover:underline'}`;
