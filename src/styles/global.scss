@@ -55,6 +55,8 @@
 
   html {
     font-size: 16px;
+    /* In-page links and focus land below the fixed navigation and the site banner. */
+    scroll-padding-top: calc(var(--site-banner-height, 0px) + var(--nav-offset) + 1rem);
 
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;

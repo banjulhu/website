@@ -414,7 +414,7 @@ const jsonLd = contentType === 'news' ? JSON.stringify({
                             class="hidden lg:block"
                             aria-label="Sidebar navigation"
                         >
-                            <div class="sticky top-24">
+                            <div class="sticky top-[calc(var(--site-banner-height,0px)_+_6rem)]">
                                 <slot name="sidebar" />
                             </div>
                         </aside>
