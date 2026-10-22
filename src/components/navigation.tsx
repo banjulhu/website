@@ -113,16 +113,17 @@ export const Navigation = ({ pathname }: { pathname: string }) => {
     return (
         <MotionConfig reducedMotion="user">
             <CommandPalette open={searchOpen} setOpen={setSearchOpen} />
-            <header className="pointer-events-none fixed top-3 inset-x-3 sm:inset-x-5 lg:inset-x-8 z-50">
+            {/* Floats inset from the edges at the top of the page; once merged it becomes a full-width
+                bar, padded so the logo and actions keep the same place across the edges. */}
+            <header className={`pointer-events-none fixed z-50 ${scrolled ? 'inset-x-0 top-0' : 'top-3 inset-x-3 sm:inset-x-5 lg:inset-x-8'}`}>
                 <motion.div
                     layout
                     initial={false}
                     transition={layoutTransition}
-                    style={{ borderRadius: PILL_RADIUS }}
                     data-merged={scrolled}
-                    className={`group relative grid grid-cols-[1fr_auto_1fr] items-center ${scrolled ? 'pointer-events-auto px-4 py-2 lg:px-5' : ''}`}
+                    className={`group relative grid grid-cols-[1fr_auto_1fr] items-center ${scrolled ? 'pointer-events-auto px-3 py-2 sm:px-5 lg:px-8' : ''}`}
                 >
-                    <Skin visible={scrolled} radius={PILL_RADIUS} transition={layoutTransition} className="shadow-lg shadow-black/[0.08] dark:shadow-black/30" />
+                    <Skin visible={scrolled} radius={0} transition={layoutTransition} className="shadow-lg shadow-black/[0.08] dark:shadow-black/30" />
 
                     <nav aria-label="Main navigation" className="contents">
                         {/* Logo: floats large on its own at the top, shrinks into the bar once merged */}
