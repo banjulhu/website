@@ -94,7 +94,9 @@ const statusColors: Record<string, { text: string; dot: string }> = {
 
         <!-- Filter sidebar -->
         <aside class="lg:w-60 shrink-0">
-            <div class="lg:sticky lg:top-[calc(var(--site-banner-height,0px)_+_7rem)]">
+            <!-- Scrolls on its own when taller than the window, so the last filters can be seen
+                 and focused without reaching the end of the page. The padding keeps focus rings unclipped. -->
+            <div class="lg:sticky lg:top-[calc(var(--site-banner-height,0px)_+_7rem)] lg:max-h-[calc(100vh_-_var(--site-banner-height,0px)_-_8rem)] lg:overflow-y-auto lg:-m-1 lg:p-1">
                 <!-- Search -->
                 <div class="mb-6">
                     <div class="relative">
