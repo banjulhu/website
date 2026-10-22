@@ -23,37 +23,102 @@
             "the next generation"
         ],
         "subline": "ELIXIR Norway supports life science researchers with bioinformatics services, data management tools, and secure e-infrastructure. Part of Europe's leading bioinformatics network.",
-        "primaryAction": { "label": "Explore services", "href": "/services" },
-        "secondaryAction": { "label": "Get support", "href": "/research-support" }
+        "primaryAction": {
+            "label": "Explore services",
+            "href": "/services"
+        },
+        "secondaryAction": {
+            "label": "Get support",
+            "href": "/research-support"
+        }
     },
     "footer": {
         "navigation": [
-            { "label": "About", "href": "/about" },
-            { "label": "Research Support", "href": "/research-support" },
-            { "label": "Services", "href": "/services" },
-            { "label": "Funding & Projects", "href": "/funding-and-projects" },
-            { "label": "News", "href": "/news" },
-            { "label": "Events", "href": "/events" },
-            { "label": "Training", "href": "/training" },
-            { "label": "Accessibility", "href": "/accessibility" }
+            {
+                "label": "About",
+                "href": "/about"
+            },
+            {
+                "label": "Research Support",
+                "href": "/research-support"
+            },
+            {
+                "label": "Services",
+                "href": "/services"
+            },
+            {
+                "label": "Funding & Projects",
+                "href": "/funding-and-projects"
+            },
+            {
+                "label": "News",
+                "href": "/news"
+            },
+            {
+                "label": "Events",
+                "href": "/events"
+            },
+            {
+                "label": "Training",
+                "href": "/training"
+            },
+            {
+                "label": "Accessibility",
+                "href": "/accessibility"
+            }
         ],
-        "careers": { "label": "Careers at ELIXIR", "href": "https://elixir-europe.org/about-us/vacancies" },
+        "careers": {
+            "label": "Careers at ELIXIR",
+            "href": "https://elixir-europe.org/about-us/vacancies"
+        },
         "socials": {
             "linkedin": "https://www.linkedin.com/company/elixir-norway",
             "youtube": "https://www.youtube.com/channel/UCvwFIw5HomylguGOGxR8B8w",
             "flickr": "https://www.flickr.com/photos/elixir-europe/"
         },
         "partners": [
-            { "name": "University of Bergen", "href": "https://uib.no/", "logo": "/assets/logos/orgs/uib.svg" },
-            { "name": "University of Oslo", "href": "https://uio.no/", "logo": "/assets/logos/orgs/uio.svg" },
-            { "name": "UiT The Arctic University of Norway", "href": "https://uit.no/", "logo": "/assets/logos/orgs/uit.svg" },
-            { "name": "NTNU", "href": "https://ntnu.no/", "logo": "/assets/logos/orgs/ntnu.svg" },
-            { "name": "NMBU", "href": "https://nmbu.no/", "logo": "/assets/logos/orgs/nmbu.svg" }
+            {
+                "name": "University of Bergen",
+                "href": "https://uib.no/",
+                "logo": "/assets/logos/orgs/uib.svg"
+            },
+            {
+                "name": "University of Oslo",
+                "href": "https://uio.no/",
+                "logo": "/assets/logos/orgs/uio.svg"
+            },
+            {
+                "name": "UiT The Arctic University of Norway",
+                "href": "https://uit.no/",
+                "logo": "/assets/logos/orgs/uit.svg"
+            },
+            {
+                "name": "NTNU",
+                "href": "https://ntnu.no/",
+                "logo": "/assets/logos/orgs/ntnu.svg"
+            },
+            {
+                "name": "NMBU",
+                "href": "https://nmbu.no/",
+                "logo": "/assets/logos/orgs/nmbu.svg"
+            }
         ],
         "funders": [
-            { "name": "Research Council of Norway", "href": "https://forskningsradet.no/", "logo": "/assets/logos/orgs/nfr.svg" },
-            { "name": "NordForsk", "href": "https://www.nordforsk.org", "logo": "/assets/logos/orgs/nordforsk.svg" },
-            { "name": "Co-funded by the European Union", "href": "https://research-and-innovation.ec.europa.eu/", "logo": "/assets/logos/orgs/eu.svg" }
+            {
+                "name": "Research Council of Norway",
+                "href": "https://forskningsradet.no/",
+                "logo": "/assets/logos/orgs/nfr.svg"
+            },
+            {
+                "name": "NordForsk",
+                "href": "https://www.nordforsk.org",
+                "logo": "/assets/logos/orgs/nordforsk.svg"
+            },
+            {
+                "name": "Co-funded by the European Union",
+                "href": "https://research-and-innovation.ec.europa.eu/",
+                "logo": "/assets/logos/orgs/eu.svg"
+            }
         ],
         "fundingNote": "Financed by the Research Council of Norway (grants 208481, 270068, 295932, 350529), its partner institutions, NordForsk, and co-funded by the European Union."
     },
@@ -67,9 +132,21 @@
         "resources": {
             "heading": "Find courses and materials",
             "intro": "Browse our catalogue of available courses, categorised by topic and proficiency level. All training materials are open-access.",
-            "tess": { "name": "ELIXIR TeSS", "caption": "Course catalogue", "href": "https://tess.elixir-europe.org/" },
-            "github": { "name": "GitHub", "caption": "Training materials", "href": "https://github.com/ELIXIR-Norway-Training" },
-            "zenodo": { "name": "Zenodo", "caption": "Archived materials", "href": "https://zenodo.org/communities/elixir-no/records?q=&f=resource_type%3Alesson&f=resource_type%3Apresentation&l=list&p=1&s=10&sort=newest" }
+            "tess": {
+                "name": "ELIXIR TeSS",
+                "caption": "Course catalogue",
+                "href": "https://tess.elixir-europe.org/"
+            },
+            "github": {
+                "name": "GitHub",
+                "caption": "Training materials",
+                "href": "https://github.com/ELIXIR-Norway-Training"
+            },
+            "zenodo": {
+                "name": "Zenodo",
+                "caption": "Archived materials",
+                "href": "https://zenodo.org/communities/elixir-no/records?q=&f=resource_type%3Alesson&f=resource_type%3Apresentation&l=list&p=1&s=10&sort=newest"
+            }
         }
     },
     "researchSupport": {
@@ -79,7 +156,10 @@
         },
         "heading": "Expert bioinformatics help for your research",
         "intro": "From quick consultations to long-term collaborations, our team across five universities helps you design experiments, analyse data, and manage your research outputs.",
-        "documentation": { "label": "NeLS user documentation", "href": "https://nels-docs.readthedocs.io/en/latest/" },
+        "documentation": {
+            "label": "NeLS user documentation",
+            "href": "https://nels-docs.readthedocs.io/en/latest/"
+        },
         "howItWorks": {
             "title": "How does it work?",
             "body": "When a request is submitted, it is broadcast to all members of the Helpdesk. The request is then picked up by the member with the most expertise on the topic. We typically reply within 1 working day."
