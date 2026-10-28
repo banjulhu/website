@@ -96,7 +96,12 @@
           "photo": "/assets/people/kidane.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Kidane.Mebrahtu.Tekle",
           "affiliations": [],
-          "elixir-groups": []
+          "elixir-groups": [
+            {
+              "name": "coordinators",
+              "role": "Research Support Coordinator"
+            }
+          ]
         },
         {
           "name": "David Dolan",
