@@ -96,12 +96,7 @@
           "photo": "/assets/people/kidane.png",
           "profile-url": "https://www4.uib.no/finn-ansatte/Kidane.Mebrahtu.Tekle",
           "affiliations": [],
-          "elixir-groups": [
-            {
-              "name": "coordinators",
-              "role": "Research Support Coordinator"
-            }
-          ]
+          "elixir-groups": []
         },
         {
           "name": "David Dolan",
@@ -109,7 +104,12 @@
           "photo": "/assets/people/david-dolan.png",
           "profile-url": "https://www4.uib.no/en/find-employees/David.William.Peter.Dolan",
           "affiliations": [],
-          "elixir-groups": []
+          "elixir-groups": [
+            {
+              "name": "coordinators",
+              "role": "Research Support Coordinator"
+            }
+          ]
         },
         {
           "name": "Siri Kallhovd",
